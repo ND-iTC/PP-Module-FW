@@ -4,7 +4,7 @@
 |===
 
 |*Allowed-with list version*|1.4r10
-|*Date*|18 October 2022 
+|*Date*|30 January 2023
 
 |===
 
@@ -77,6 +77,14 @@ No objects of this type are currently allowed with the PP-Module.
 .4+|5.|Object ID:|PP-Module for Virtual Private Network (VPN) Gateways
 
 |Object version:|1.2 (31 March 2022) 
+
+|Owner:|NIAP (niap@niap-ccevs.org)
+
+|Notes:|None
+
+.4+|6.|Object ID:|PP-Module for MACsec Ethernet Encryption
+
+|Object version:|1.0 (16 December 2023) 
 
 |Owner:|NIAP (niap@niap-ccevs.org)
 
