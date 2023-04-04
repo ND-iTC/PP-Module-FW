@@ -6,7 +6,7 @@
 :data-uri:
 :revnumber: 1.5 Draft
 :revdate: 03-10-2022
-image:extracted-media/FW/media/image1.png[extracted-media/FW/media/image1,width=624,height=912]
+image:extracted-media/FW/media/image1.png[extracted-media/FW/media/image1,width=688,height=212]
 
 = Evaluation Activities for Stateful Traffic Filter Firewalls PP-Module
 Version: {revnumber}
