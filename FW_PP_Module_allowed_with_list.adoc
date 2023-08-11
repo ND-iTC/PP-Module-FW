@@ -3,7 +3,7 @@
 [cols="1,2",options=,]
 |===
 
-|*Allowed-with list version*|1.4r11
+|*Allowed-with list version*|1.5
 |*Date*|10 August 2023
 
 |===
