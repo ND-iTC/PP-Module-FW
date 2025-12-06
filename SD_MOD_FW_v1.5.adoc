@@ -3,17 +3,23 @@
 :toc-title!:
 :toc-placement!:
 :doctype: book
+:chapter-label!:
 :data-uri:
-:revnumber: 1.5 Draft
-:revdate: 03-10-2022
-image:extracted-media/FW/media/image1.png[extracted-media/FW/media/image1,width=688,height=212]
+:appendix-caption: Annex
 
-= Evaluation Activities for Stateful Traffic Filter Firewalls PP-Module
-Version: {revnumber}
 
-Date: {revdate}
+= Supporting Document - Evaluation Activities for Stateful Traffic Filter Firewalls PP-Module
 
-*Foreword*
+Version: 2.0 draft +
+Date: December-2025
+
+CCDB-2025-December-08
+
+*Acknowledgements:*
+
+This Supporting Document was developed by the Network international Technical Community with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+
+*Preface*
 
 This is a supporting document, intended to complement the Common Criteria version 3 and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
 
@@ -23,25 +29,24 @@ This supporting document has been developed by the Network International Technic
 
 *Technical Editor:* Network International Technical Community (NDFW-iTC)
 
-*Document history:*
+*Revision History*
 
-V1.1, 05 April 2019 (Initial release for public review)
-
-V1.2 July 2019 (Updated version)
-
-V1.3 September 2019 (Release version)
-
-V1.4 April 2020 (Version for NDcPP V2.2e)
-
-V1.4e June 2020 (Updated version for NDcPP V2.2e)
+[width="100%",cols="17%,19%,63%",options="header",]
+|===
+|*Version* |*Date* |*Description* 
+|2.0 draft |08-December-2025 |Version for NDcPP V4.0, Addressed comments from CCMB
+|1.4e |25-June-2020 |Added link to allowed-with list for FW Module
+|1.4 |6-April-2020 |Version for NDcPP V2.2e 
+|1.3 |27-September-2019 |Release version 
+|1.2 |19-July-2019 |Integration of comments 
+|1.1 |05-April-2019 |Updated PP-Module version of FWcPP 
+|1.0 |26-November-2018 |First PP-Module version of FWcPP
+|===
 
 *General Purpose:* See section 1.1.
 
 *Field of special use:* This Supporting Document applies to the evaluation of TOEs claiming conformance with the PP-Module for Stateful Traffic Filter Firewalls [MOD-FW].
 
-*Acknowledgements:*
-
-This Supporting Document was developed by the Network international Technical Community with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 *Table of Contents*
 
@@ -55,27 +60,27 @@ toc::[]
 === Technology Area and Scope of Supporting Document
 
 [arabic]
-. This Supporting Document defines the Evaluation Activities associated with the PP-Module for Stateful Traffic Filter Firewalls [MOD-FW]. Note that [MOD-FW] also requires the use of the Evaluation Activities for the Base-PP (Protection Profile for Network Devices (NDcPP) version 2.2e), i.e. the Evaluation Activities for network devices described in [SD-ND].
+. This Supporting Document defines the Evaluation Activities associated with the PP-Module for Stateful Traffic Filter Firewalls [MOD-FW]. Note that [MOD-FW] also requires the use of the Evaluation Activities for the PP-Module Base (Protection Profile for Network Devices (NDcPP) version 4.0), i.e. the Evaluation Activities for network devices described in [SD-ND].
 . This Supporting Document is mandatory for evaluations of TOEs that claim conformance to the following PP-Configuration:
 +
 [loweralpha]
-.. PP-Configuration for Stateful Traffic Filter Firewalls, version 1.4e [CONF-FW].
+.. PP-Configuration for Stateful Traffic Filter Firewalls, version 2.0 draft [CONF-FW].
 
 [arabic, start=3]
-. Although Evaluation Activities are defined mainly for the evaluators to follow, in general the definition of Evaluation Activities will also help Developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in Evaluation Activities may in some cases clarify the meaning of SFRs, and may identify particular requirements for the content of Security Targets (especially the TOE Summary Specification), guidance documentation, and possibly supplementary information (e.g. for entropy analysis or cryptographic key management architecture).
+. Although Evaluation Activities are defined mainly for the evaluators to follow, in general the definition of Evaluation Activities will also help Developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in Evaluation Activities may in some cases clarify the meaning of SFRs and may identify particular requirements for the content of Security Targets (especially the TOE Summary Specification), guidance documentation, and possibly supplementary information (e.g. for entropy analysis or cryptographic key management architecture).
 
 === Structure of the Document
 
 [arabic, start=4]
 . Evaluation Activities can be defined for both Security Functional Requirements (SFRs) and Security Assurance Requirements (SARs). These are defined in separate sections of this Supporting Document.
-. If any Evaluation Activity cannot be successfully completed in an evaluation then the overall verdict for the evaluation is a ‘fail’. In rare cases there may be acceptable reasons why an Evaluation Activity may be modified or deemed not applicable for a particular TOE, but this must be agreed with the Certification Body for the evaluation.
+. If any Evaluation Activity cannot be successfully completed in an evaluation, then the overall verdict for the evaluation is a ‘fail’. In rare cases there may be acceptable reasons why an Evaluation Activity may be modified or deemed not applicable for a particular TOE, but this must be agreed with the Certification Body for the evaluation.
 . In general, if all Evaluation Activities (for both SFRs and SARs) are successfully completed in an evaluation then it would be expected that the overall verdict for the evaluation is a ‘pass’. To reach a ‘fail’ verdict when the Evaluation Activities have been successfully completed would require a specific justification from the evaluator as to why the Evaluation Activities were not sufficient for that TOE.
 . Similarly, at the more granular level of Assurance Components, if the Evaluation Activities for an Assurance Component and all of its related SFR Evaluation Activities are successfully completed in an evaluation then it would be expected that the verdict for the Assurance Component is a ‘pass’. To reach a ‘fail’ verdict for the Assurance Component when these Evaluation Activities have been successfully completed would require a specific justification from the evaluator as to why the Evaluation Activities were not sufficient for that TOE.
 
 === Application of this Supporting Document
 
 [arabic, start=8]
-. This Supporting Document (SD) defines three types of Evaluation Activities (EAs) – TOE Summary Specification (TSS), Guidance Documentation, and Tests and is designed to be used in conjunction with the PP-Module for Stateful Traffic Filter Firewalls. This PP-Module will explicitly identify it as a source for its EAsfootnote:[In general a PP-Module may reference one or more SDs as sources for the Evaluation Activities for different sets of SFRs.]. Each security requirement (SFR or SAR) specified in the PP-Module could have multiple EAs associated with it. The security requirement naming convention is consistent between PP-Module and SD ensuring a clear one to one correspondence between security requirements and evaluation activities.
+. This Supporting Document (SD) defines three types of Evaluation Activities (EAs) – TOE Summary Specification (TSS), Guidance Documentation, and Tests and is designed to be used in conjunction with the PP-Module for Stateful Traffic Filter Firewalls. This PP-Module will explicitly identify it as a source for its EAsfootnote:[In general, a PP-Module may reference one or more SDs as sources for the Evaluation Activities for different sets of SFRs.]. Each security requirement (SFR or SAR) specified in the PP-Module could have multiple EAs associated with it. The security requirement naming convention is consistent between PP-Module and SD ensuring a clear one to one correspondence between security requirements and evaluation activities.
 . The PP-Module and SD are designed to be used in conjunction with each other, where the PP-Module lists SFRs and SARs and the SD catalogues EAs associated with each SFR and SAR. Some of the SFRs included in the PP-Module are optional or selection-based. Therefore, an ST claiming conformance to a PP-Configuration claiming this PP-Module does not necessarily have to include all possible SFRs defined in the PP-Module.
 . In an ST conformant to the PP-Configuration claiming the PP-Module, several operations need to be performed (mainly selections and assignments). Some EAs define separate actions for different selected or assigned values in SFRs. The evaluator shall neither carry out EAs related to SFRs that are not claimed in the ST nor EAs related to specific selected or assigned values that are not claimed in the ST.
 . EAs do not necessarily have to be executed independently from each other. A description in a guidance documentation or one test case, for example, can cover multiple EAs at a time, no matter whether the EAs are related to the same or different SFRs.
@@ -140,7 +145,7 @@ _Additional Note for Distributed TOEs_
 === Security Audit (FAU)
 
 [arabic, start=19]
-. In addition to the EAs required by the Base-PP, the evaluator shall perform the following additional EAs to ensure that the Base-PP’s security functionality is maintained by the addition of the PP-Module.
+. In addition to the EAs required by the PP-Module Base, the evaluator shall perform the following additional EAs to ensure that the PP-Module Base’s security functionality is maintained by the addition of the PP-Module.
 
 ==== FAU_GEN.1 Audit Data Generation
 
@@ -152,12 +157,12 @@ _Additional Note for Distributed TOEs_
 ===== Guidance Documentation
 
 [arabic, start=21]
-. In addition to the Evaluation Activities specified in the Supporting Document for the Base-PP, the evaluator shall check the guidance documentation to ensure that it describes the audit records specified in Table 2 of the PP-Module in addition to those required by the Base-PP. If the optional SFR FFW_RUL_EXT.2 is claimed by the TOE, the evaluator shall also check the guidance documentation to ensure that it describes the relevant audit record specified in Table 3 of the PP-Module.
+. In addition to the Evaluation Activities specified in the Supporting Document for the PP-Module Base, the evaluator shall check the guidance documentation to ensure that it describes all the audit records specified in Table 2 of the PP-Module in addition to those required by the PP-Module Base. If the optional SFR FFW_RUL_EXT.2 is claimed by the TOE, the evaluator shall also check the guidance documentation to ensure that it describes all the relevant audit record specified in Table 3 of the PP-Module.
 
 ===== Tests
 
 [arabic, start=22]
-. In addition to the Evaluation Activities specified in the Supporting Document for the Base-PP, the evaluator shall perform tests to demonstrate that audit records are generated for the auditable events as specified in Table 2 of the PP-Module and, if the optional SFR FFW_RUL_EXT.2 is claimed by the TOE, Table 3.
+. In addition to the Evaluation Activities specified in the Supporting Document for the PP-Module Base, the evaluator shall perform tests to demonstrate that audit records are generated for all the auditable events as specified in Table 2 of the PP-Module and, if the optional SFR FFW_RUL_EXT.2 is claimed by the TOE, Table 3.
 
 === User Data Protection (FDP)
 
@@ -166,7 +171,7 @@ _Additional Note for Distributed TOEs_
 ===== TSS 
 
 [arabic, start=23]
-. “Resources” in the context of this requirement are network packets being sent through (as opposed to “to”, as is the case when a security administrator connects to the TOE) the TOE. The concern is that once a network packet is sent, the buffer or memory area used by the packet still contains data from that packet, and that if that buffer is re-used, those data might remain and make their way into a new packet. The evaluator shall check to ensure that the TSS describes packet processing to the extent that they can determine that no data will be reused when processing network packets. The evaluator shall ensure that this description at a minimum describes how the previous data are zeroized/overwritten, and at what point in the buffer processing this occurs.
+. “Resources” in the context of this requirement are network packets being sent through (as opposed to “to”, as is the case when a security administrator connects to the TOE) the TOE. The concern is that once a network packet is sent, the buffer or memory area used by the packet still contains data from that packet, and that if that buffer is re-used, those data might remain and make their way into a new packet. The evaluator shall check to ensure that the TSS describes packet processing to the extent that they can determine that no data will be reused when processing network packets. The evaluator shall ensure that this description at a minimum describes how the previous data are zeroized/overwritten, and at what point in the buffer processing this occurs. This does not necessarily require to zeroize/overwrite related buffer/memory after each sent network package. Depending on the implementation e.g. cyclic buffer overwrite may be sufficient.
 
 === Firewall (FFW)
 
@@ -181,7 +186,7 @@ _Additional Note for Distributed TOEs_
 |FFW_RUL_EXT.1, Tests 1-2 |Both, IPv4 and IPv6.
 |FFW_RUL_EXT.1.2/1.3/1.4, Tests 1-2 |As defined in the test description.
 |FFW_RUL_EXT.1.5, Tests 1-8 |Both, IPv4 and IPv6.
-|FFW_RUL_EXT.1.6, Tests 1-2 |Both IPv4 and IPv6 shall be tested for items a), b), c), d), and e) of the SFR element FFW_RUL_EXT.1.6. Both IPv4 and IPv6 shall be tested for item i) unless the rule definition is specific to IPv4 or IPv6. Note: f), g), and h) are specific to IPv4 or IPv6 and shall be tested accordingly.
+|FFW_RUL_EXT.1.6, Tests 1-2 |Both IPv4 and IPv6 shall be tested for items a), b), d), and e) of the SFR element FFW_RUL_EXT.1.6. Both IPv4 and IPv6 shall be tested for item i) unless the rule definition is specific to IPv4 or IPv6. Note: c), f), g), and h) are specific to IPv4 or IPv6 and shall be tested accordingly.
 |FFW_RUL_EXT.1.7, Tests 1-2 |Both, IPv4 and IPv6.
 |FFW_RUL_EXT.1.8, Tests 1-2 |Both, IPv4 and IPv6.
 |FFW_RUL_EXT.1.9, Test 1 |As defined in the test description.
@@ -379,14 +384,14 @@ _Additional Note for Distributed TOEs_
 [arabic, start=62]
 . The following tests shall be run using IPv4 and IPv6.
 . Test 1: The evaluator shall configure the TOE to drop and log network traffic where the source address of the packet matches that of the TOE network interface upon which the traffic was received. The evaluator shall generate suitable network traffic to match the configured rule and verify that the traffic is dropped and a log message generated.
-. Test 2: The evaluator shall configure the TOE to drop and log network traffic where the source IP address of the packet fails to match the network reachability information of the interface to which it is targeted, e.g. if the TOE believes that network 192.168.1.0/24 is reachable through interface 2, network traffic with a source address from the 192.168.1.0/24 network should be generated and sent to an interface other than interface 2. The evaluator shall verify that the network traffic is dropped and a log message generated.
+. Test 2: The evaluator shall configure the TOE to drop and log network traffic where the source IP address of the packet fails to match the network reachability information of the interface to which it is targeted, e.g. if the TOE believes that network 192.168.1.0/24 is reachable through interface 2, network traffic with a source address from the 192.168.1.0/24 network should be generated and sent to an interface other than interface 2. The evaluator shall verify that the network traffic is dropped, and a log message generated.
 
 ==== FFW_RUL_EXT.1.8
 
 ===== TSS
 
 [arabic, start=65]
-. The evaluator shall verify that the TSS describes the algorithm applied to incoming packets, including the processing of default rules, determination of whether a packet is part of an established session, and application of administrator defined and ordered ruleset.
+. The evaluator shall verify that the TSS describes the algorithm applied to incoming packets, including the processing of default rules, determination of whether a packet is part of an established session, and application of administrator defined and ordered ruleset. If the TOE implements a mechanism that ensures that no conflicting rules can be configured, the TSS shall describe the underlying mechanism.
 
 ===== Guidance Documentation
 
@@ -396,7 +401,7 @@ _Additional Note for Distributed TOEs_
 ===== Tests
 
 [arabic, start=67]
-. Test 1: The evaluator shall devise two equal stateful traffic filtering rules with alternate operations – permit and drop. The rules should then be deployed in two distinct orders and in each case the evaluator shall ensure that the first rule is enforced in both cases by generating applicable packets and using packet capture and logs for confirmation.
+. Test 1: If the TOE implements a mechanism that ensures that no conflicting rules can be configured, the evaluator shall try to configure two conflicting rules and verify that the TOE rejects the conflicting rule(s). It is important to verify that the mechanism is implemented in the TOE but not in the non-TOE environment. If the TOE does not implement a mechanism that ensures that no conflicting rules can be configured, the evaluator shall devise two equal stateful traffic filtering rules with alternate operations – permit and drop. The rules should then be deployed in two distinct orders and in each case the evaluator shall ensure that the first rule is enforced in both cases by generating applicable packets and using packet capture and logs for confirmation.
 . Test 2: The evaluator shall repeat the procedure above, except that the two rules should be devised where one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator should test both orders to ensure that the first is enforced regardless of the specificity of the rule.
 
 ==== FFW_RUL_EXT.1.9
@@ -414,7 +419,7 @@ _Additional Note for Distributed TOEs_
 ===== Tests
 
 [arabic, start=71]
-. For each attribute in FFW_RUL_EXT.1.2, the evaluator shall construct a test to demonstrate that the TOE can correctly compare the attribute from the packet header to the ruleset, and shall demonstrate both the permit and deny for each case. It shall also be verified that a packet is dropped if no matching rule can be identified for the packet. The evaluator shall check the log in each case to confirm that the relevant rule was applied. The evaluator shall record a packet capture for each test to demonstrate the correct TOE behaviour.
+. For each attribute in FFW_RUL_EXT.1.2, the evaluator shall construct a test to demonstrate that the TOE can correctly compare the attribute from the packet header to the ruleset and shall demonstrate both the permit and deny for each case. It shall also be verified that a packet is dropped if no matching rule can be identified for the packet. The evaluator shall check the log in each case to confirm that the relevant rule was applied. The evaluator shall record a packet capture for each test to demonstrate the correct TOE behaviour.
 
 ==== FFW_RUL_EXT.1.10
 
@@ -439,7 +444,7 @@ _Additional Note for Distributed TOEs_
 ==== FMT_SMF.1/FFW Specification of Management Functions
 
 [arabic, start=76]
-. The evaluation activities specified for FMT_SMF.1 in the Supporting Document for the Base-PP shall be applied in the same way to the newly added management functions defined in FMT_SMF.1/FFW in the FW Module.
+. The evaluation activities specified for FMT_SMF.1 in the Supporting Document for the PP-Module Base shall be applied in the same way to the newly added management functions defined in FMT_SMF.1/FFW in the FW Module.
 
 == Evaluation Activities for Optional Requirements defined in the PP-Module
 
@@ -452,7 +457,7 @@ _Additional Note for Distributed TOEs_
 ===== TSS
 
 [arabic, start=77]
-. The evaluator shall verify that the TSS identifies the protocols that can cause the automatic creation of dynamic packet filtering rules. In some cases rather than creating dynamic rules, the TOE might establish stateful sessions to support some identified protocol behaviors.
+. The evaluator shall verify that the TSS identifies the protocols that can cause the automatic creation of dynamic packet filtering rules. In some cases rather than creating dynamic rules, the TOE might establish stateful sessions to support some identified protocol behaviours.
 . The evaluator shall verify that the TSS explains the dynamic nature of session establishment and removal. The TSS also shall explain any logging ramifications.
 . The evaluator shall verify that for each of the protocols selected, the TSS explains the dynamic nature of session establishment and removal specific to the protocol.
 
@@ -478,7 +483,7 @@ _Additional Note for Distributed TOEs_
 
 [arabic, start=86]
 . No additional Evaluation Activities for SARs (over and above those in [SD-ND]) are defined here. The evaluator shall perform the SAR Evaluation Activities defined in the NDcPP Supporting Document against the entire TOE (i.e. both the network device portion and the stateful firewall portion).
-. The evaluator shall also supplement the AVA_VAN.1 Evaluation Activities with the materials provided in Appendix A of the current document.
+. The evaluator shall also supplement the AVA_VAN.1 Evaluation Activities with the materials provided in Annex A of the current document.
 
 == Required Supplementary Information
 
@@ -487,38 +492,36 @@ _Additional Note for Distributed TOEs_
 
 == References
 
-[CC1] Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model +
-CCMB-2017-04-001, Version 3.1 Revision 5, April 2017
+[CC1] Common Criteria for Information Technology Security Evaluation, Part 1: Introduction and General Model, CCMB-2022-11-001, CC:2022 Revision 1, November 2022.
 
-[CC2] Common Criteria for Information Technology Security Evaluation, +
-Part 2: Security Functional Components, +
-CCMB-2017-04-002, Version 3.1 Revision 5, April 2017
+[CC2] Common Criteria for Information Technology Security Evaluation, Part 2: Security Functional Components, CCMB-2022-11-002, CC:2022 Revision 1, November 2022.
 
-[CC3] Common Criteria for Information Technology Security Evaluation, +
-Part 3: Security Assurance Components, +
-CCMB-2017-04-003, Version 3.1 Revision 5, April 2017
+[CC3] Common Criteria for Information Technology Security Evaluation, Part 3: Security Assurance Components, CCMB-2022-11-003, CC:2022 Revision 1, November 2022.
 
-[CEM] Common Methodology for Information Technology Security Evaluation, +
-Evaluation Methodology, +
-CCMB-2017-04-004, Version 3.1, Revision 5, April 2017
+[CC4] Common Criteria for Information Technology Security Evaluation, Part 4: Framework for the specification of evaluation methods and activities, CCMB-2022-11-004, CC:2022 Revision 1, November 2022.
+
+[CC5] Common Criteria for Information Technology Security Evaluation, Part 5: Pre-defined packages of security requirements, CCMB-2022-11-005, CC:2022 Revision 1, November 2022.
+
+[CEM] Common Methodology for Information Technology Security Evaluation, CCMB-2022-11-006, CC:2022 Revision 1, November 2022.
+
+[CC-E&I] Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024
 
 [MOD-FW] PP-Module for Stateful Traffic Filter Firewalls, +
-Version 1.4 +Errata 20200625, 25 June 2020
+Version 2.0 draft, 08 December 2025
 
 [CONF-FW] PP-Configuration for Network Device and Stateful Traffic Filter Firewalls, +
-Version 1.4 +Errata 20200625, 25 June 2020
+Version 2.0 draft, 08 December 2025
 
 [PP-ND] collaborative Protection Profile for Network Devices, +
-Version 2.2e, 27 March 2020
+Version 4.0, 25 November 2025
 
-[SD-ND] Evaluation Activities for Network Device cPP, Version 2.2, December 2019
+[SD-ND] Evaluation Activities for Network Device cPP, 4.0, 25 November 2025
 
-
-= Appendices
 
 :sectnums!:
 
-==  A. Vulnerability Analysis
+[appendix]
+==  Vulnerability Analysis
 
 [arabic, start=89]
 . [SD-ND] contains the details of the vulnerability analysis process to be followed; that information is not repeated here. The additional information that is needed for vulnerability analysis for TOEs conforming to [CONF-FW] is contained in the following sections.
@@ -526,7 +529,7 @@ Version 2.2e, 27 March 2020
 === A.1 Sources of vulnerability information
 
 [arabic, start=90]
-. [SD-ND] identifies the 4 types flaws to be considered by the evaluation team. For each type, the following additional information is provided for TOEs conforming to [CONF-FW].
+. [SD-ND] identifies the 4 types of flaws to be considered by the evaluation team. For each type, the following additional information is provided for TOEs conforming to [CONF-FW].
 
 ==== A.1.1 Type 1 Hypotheses – Public-Vulnerability-Based
 
@@ -581,7 +584,8 @@ Version 2.2e, 27 March 2020
 [arabic, start=104]
 . No entries are currently defined for this list.
 
-==  B. Firewall Equivalency Considerations
+[appendix]
+==  Firewall Equivalency Considerations
 
 [arabic, start=105]
 . No additional Equivalency Considerations (over and above those in [SD-ND]) are defined here.
