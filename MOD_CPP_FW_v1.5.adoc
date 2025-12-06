@@ -70,8 +70,7 @@ CCMB-2022-11-006, CEM:2022, Revision 1, November 2022.
 [width="100%",cols="17%,19%,63%",options="header",]
 |===
 |*Version* |*Date* |*Description* 
-|2.0 draft |08-December-2025 |Version for NDcPP V4.0, +
-Addressed comments from CCMB
+|2.0 draft |08-December-2025 |Version for NDcPP V4.0, Addressed comments from CCMB
 |1.4e |25-June-2020 |Added link to allowed-with list for FW Module in chap. 
 |1.4 |6-April-2020 |Version for NDcPP V2.2e 
 |1.3 |27-September-2019 |Release version 
