@@ -13,7 +13,7 @@
 Version: 2.0 draft +
 Date: December-2025
 
-CCDB-2025-December-02
+CCDB-2025-December-08
 
 *Acknowledgements:*
 
@@ -41,7 +41,7 @@ V1.4 April 2020 (Version for NDcPP V2.2e)
 
 V1.4e June 2020 (Updated version for NDcPP V2.2e)
 
-V2.0 December 2025 (Updated version for NDcPP V4.0; CC:2022)
+V2.0 December 2025 (Updated version for NDcPP V4.0; CC:2022), Addressed comments from CCMB
 
 *General Purpose:* See section 1.1.
 
@@ -507,10 +507,10 @@ _Additional Note for Distributed TOEs_
 [CC-E&I] Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024
 
 [MOD-FW] PP-Module for Stateful Traffic Filter Firewalls, +
-Version 2.0 draft, 02 December 2025
+Version 2.0 draft, 08 December 2025
 
 [CONF-FW] PP-Configuration for Network Device and Stateful Traffic Filter Firewalls, +
-Version 2.0 draft, 02 December 2025
+Version 2.0 draft, 08 December 2025
 
 [PP-ND] collaborative Protection Profile for Network Devices, +
 Version 4.0, 25 November 2025
