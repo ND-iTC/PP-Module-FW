@@ -9,7 +9,7 @@
 = PP-Module for Stateful Traffic Filter Firewalls
 
 Version: 2.0 draft +
-Date: 02-December-2025
+Date: 08-December-2025
 
 == Acknowledgements 
 
@@ -61,7 +61,7 @@ CCMB-2022-11-006, CEM:2022, Revision 1, November 2022.
 [width="100%",cols="16%,84%",]
 |===
 |[PP-ND] |collaborative Protection Profile for Network Devices, Version 4.0, 25 November 2025
-|[SD-FW] |Evaluation Activities for Stateful Traffic Filter Firewalls PP-Configuration, Version 2.0 draft, 02 December 2025
+|[SD-FW] |Evaluation Activities for Stateful Traffic Filter Firewalls PP-Configuration, Version 2.0 draft, 08 December 2025
 |[SD-ND] |Evaluation Activities for Network Device cPP, Version 4.0, 25 November 2025
 |===
 
@@ -70,7 +70,8 @@ CCMB-2022-11-006, CEM:2022, Revision 1, November 2022.
 [width="100%",cols="17%,19%,63%",options="header",]
 |===
 |*Version* |*Date* |*Description* 
-|2.0 draft |02-December-2025 |Version for NDcPP V4.0
+|2.0 draft |08-December-2025 |Version for NDcPP V4.0, +
+Addressed comments from CCMB
 |1.4e |25-June-2020 |Added link to allowed-with list for FW Module in chap. 
 |1.4 |6-April-2020 |Version for NDcPP V2.2e 
 |1.3 |27-September-2019 |Release version 
@@ -133,7 +134,7 @@ PP-Module Reference: PP-Module for Stateful Traffic Filter Firewalls
 
 PP-Module Version:  2.0 draft
 
-PP-Module Date: 02-December-2025
+PP-Module Date: 08-December-2025
 
 PP-Module Base on which the PP-Module relies: collaborative Protection Profile for Network Devices, Version 4.0, 25-November-2025
 
