@@ -121,7 +121,7 @@ The scope of this PP-Module is to describe the security functionality of a firew
 
 * Collaborative Protection Profile for Network Device (NDcPP) version 4.0
 
-This PP-Module Base is valid because a firewall exists on the edge of a private network providing security and traffic filtering. This is functionality that typically will be implemented by a network device.
+A firewall is a specialized network device that deployed on the edge of a trusted internal network and untrusted external network and is designed to monitor, filter, and control incoming and outgoing network traffic based on a defined set of security rules.
 
 === PP-Module Introduction
 
@@ -182,10 +182,10 @@ All in all, this rationale demonstrates that a TOE can meet the TOE type descrip
 As defined by the references [CC1], [CC2], [CC3], [CC4], [CC5], [CEM] and [CC-E&I], this PP-Module:
 
 * conforms to the requirements of Common Criteria CC:2022, Release 1
-* is Part 2 extended, Part 3 conformant
+* is CC Part 2 extended, CC Part 3 conformant
 * does not claim conformance to any PP, PP-Module or PP-Configuration.
 
-This PP-Module inherits Exact Conformance as required from the specified PP-Module Base and as defined in [Exact Conformance Addendum]. This means that STs must claim exact conformance to PP-Configurations including this PP-Module and its PP-Module Base. The evaluation activities from [SD-FW] & [SD-ND] shall be used for the evaluation.
+This PP-Module inherits Exact Conformance as required from the specified PP-Module Base and as defined in [Exact Conformance Addendum]. This means that STs must claim exact conformance to PP-Configurations including this PP-Module and its PP-Module Base. This PP-Module requires the use of evaluation methods/evaluation activities defined in [SD-FW] and [SD-ND]. 
 
 The 'FW Module allowed-with list' that specifies the packages and PP-Modules to which exact conformance can be claimed in conjunction with this Module, can be found at https://nd-itc.github.io/AWL/FW_allowed_with_list.html.
 
@@ -238,7 +238,7 @@ From an exfiltration perspective, Stateful Traffic Filter Firewalls serve to lim
 
 ===== T.NETWORK_DISCLOSURE
 
-An attacker may attempt to “map” a subnet to determine the machines that reside on the network, and obtaining the IP addresses of machines, as well as the services (ports) those machines are offering. This information could be used to mount attacks to those machines via the services that are exported.
+An attacker may attempt to “map” a subnet to determine the machines that reside on the network, and obtain the IP addresses of machines, as well as the services (ports) those machines are offering. This information could be used to mount attacks to those machines via the services that are exported.
 
 SFR Rationale:
 
@@ -254,7 +254,7 @@ From an egress perspective, Stateful Traffic Filter Firewalls can be configured 
 
 ===== T.NETWORK_ACCESS
 
-With knowledge of the services that are exported by machines on a subnet, an attacker may attempt to exploit those services by mounting attacks against those services.
+With knowledge of the services that are advertised by machines on a subnet, an attacker may attempt to exploit those services by mounting attacks against the machines offering them.
 
 SFR Rationale:
 
@@ -270,7 +270,7 @@ From an egress perspective, Stateful Traffic Filter Firewalls can be configured 
 
 ===== T.NETWORK_MISUSE
 
-An attacker may attempt to use services that are exported by machines in a way that is unintended by a site’s security policies. For example, an attacker might be able to use a service to “anonymize” the attacker’s machine as they mount attacks against others.
+An attacker may attempt to use services that are advertised by machines in a way that is unintended by a site’s security policies. For example, an attacker might be able to use a service to “anonymize” the attacker’s machine as they mount attacks against others.
 
 SFR Rationale:
 
@@ -309,7 +309,7 @@ The TOE shall implement measures to ensure that any previous information content
 
 ==== O.STATEFUL_TRAFFIC_FILTERING
 
-The TOE shall perform stateful traffic filtering on network packets that it processess. For this the TOE shall support the definition of stateful traffic filtering rules that allow to permit or drop network packets. The TOE shall support assignment of the stateful traffic filtering rules to each distinct network interface. The TOE shall support the processing of the applicable stateful traffic filtering rules in an administratively defined order. The TOE shall deny the flow of network packets if no matching stateful traffic filtering rule is identified.
+The TOE shall perform stateful traffic filtering on network packets that it processes. For this the TOE shall support the definition of stateful traffic filtering rules that allow to permit or drop network packets. The TOE shall support assignment of the stateful traffic filtering rules to each distinct network interface. The TOE shall support the processing of the applicable stateful traffic filtering rules in an administratively defined order. The TOE shall deny the flow of network packets if no matching stateful traffic filtering rule is identified.
 
 Depending on the implementation, the TOE might support the stateful traffic filtering of Dynamic Protocols (optional).
 
@@ -344,7 +344,7 @@ The following table provides a mapping of objectives for the operational environ
 |OE.ADMIN_CREDENTIALS_SECURE |A.ADMIN_CREDENTIALS_SECURE
 |OE.COMPONENTS_RUNNING |A.COMPONENTS_RUNNING
 |OE.RESIDUAL_INFORMATION |A.RESIDUAL_INFORMATION
-|OE.VM_CONFIGURATION |A.VS_CORRECT_CONFIGURATION, A.VS_ISOLATON
+|OE.VM_CONFIGURATION |A.VS_CORRECT_CONFIGURATION, A.VS_ISOLATION
 |===
 
 ==== Sufficiency for Objectives for the TOE
@@ -374,9 +374,13 @@ The following rationale provides justification that the security objectives for 
 |A.PHYSICAL_PROTECTION |The assumption that the TOE is physically protected against all unauthorized access attempts is addressed by the corresponding requirement in OE.PHYSICAL.
 |A.LIMITED_FUNCTIONALITY |The assumption that the TOE does not provide any general purpose computing capabilities is addressed by the corresponding requirement in OE.NO_GENERAL_PURPOSE.
 |A.TRUSTED_ADMINISTRATOR |The assumption that the Security Administrator is trusted is addressed by the corresponding requirement in OE.TRUSTED_ADMIN.
+|A.REGULAR_UPDATES |The assumption that the devices firmware and software is updated regularly is addressed by the corresponding requirement in OE.UPDATES.
+|A.ADMIN_CREDENTIALS_SECURE |TThe assumption that the Security Administrator’s credentials are protected by the platform they are stored on is addressed by the corresponding requirement in OE.ADMIN_CREDENTIALS_SECURE.
+|A.COMPONENTS_RUNNING |The assumption that each component of a distributed system is functioning properly is satisfied by the fact that this is specified as an expectation by OE.COMPONENTS_RUNNING.
+|A.RESIDUAL_INFORMATION |The assumption that the Security Administrator must ensure that there is no unauthorized access possible for sensitive residual information is addressed by the corresponding requirement in OE.RESIDUAL_INFORMATION.
 |A.VS_TRUSTED_ADMINISTRATOR (applies to vNDs only) |The assumption that the Security Administrator for the VS is trusted is addressed by the corresponding requirement in OE.TRUSTED_ADMIN.
 |A.VS_REGULAR_UPDATES (applies to vNDs only) |The assumption that the VS software is updated regularly is addressed by the corresponding requirement in OE.UPDATES.
-|A.VS_ISOLATON (applies to vNDs only) |The assumption that the VS provides and is configured to provide sufficient isolation between software running in VMs on the same physical platform is addressed by the corresponding requirement in OE.VM_CONFIGURATION
+|A.VS_ISOLATION (applies to vNDs only) |The assumption that the VS provides and is configured to provide sufficient isolation between software running in VMs on the same physical platform is addressed by the corresponding requirement in OE.VM_CONFIGURATION
 |A.VS_CORRECT_CONFIGURATION (applies to vNDs only) |The assumption that the VS and VMs are correctly configured is addressed by the corresponding requirement in OE.VM_CONFIGURATION
 |===
 
@@ -533,7 +537,7 @@ _and distinct interface._
 
 *_Application Note {counter:appnote_count}_*
 
-_This element identifies the various attributes that are applicable when constructing rules to be enforced by this requirement – the applicable interface is a property of the TOE, and the rest of the identified attributes are defined in the associated RFCs. Note that the ‘Transport Layer Protocol’ is the IPv4/IPv6 field that identifies the applicable protocol, such as TCP, UDP, ICMP, or GRE. IPv6 extension headers are defined in RFC 2460, and the ST author may specify which fields within each supported extension header, if any may be used as attributes in the construction of an inspection rule. Also, ‘Interface’ identified above is the external port where the applicable network traffic was received or will be sent._
+_This element identifies the various attributes that are applicable when constructing rules to be enforced by this requirement – the applicable interface is a property of the TOE, and the rest of the identified attributes are defined in the associated RFCs. TOEs are encouraged to support the configuration of all possible values in the specified network protocol fields; however, TOEs are only required to support the configuration of RFC and IANA defined values. It should be noted that FFW_RUL_EXT.1.9 is applicable to any values that cannot be configured. Note that the ‘Transport Layer Protocol’ is the IPv4/IPv6 field that identifies the applicable protocol, such as TCP, UDP, ICMP, or GRE. IPv6 extension headers are defined in RFC 2460, and the ST author may specify which fields within each supported extension header, if any may be used as attributes in the construction of an inspection rule. Also, ‘Interface’ identified above is the external port where the applicable network traffic was received or will be sent._
 
 *FFW_RUL_EXT.1.3* The TSF shall allow the following operations to be associated with stateful traffic filtering rules: permit or drop with the capability to log the operation.
 
@@ -633,7 +637,7 @@ _This management function needs to be supported by the TSF in addition to the on
 
 == Security Assurance Requirements
 
-The Security Assurance Requirements are fully inherited from the PP-Module Base. The evaluation activities from [SD-FW] & [SD-ND] shall be used for the evaluation.
+The Security Assurance Requirements are fully inherited from the PP-Module Base. This PP-Module requires the use of evaluation methods/evaluation activities defined in [SD-FW] and [SD-ND].
 
 [appendix]
 == Optional Requirements

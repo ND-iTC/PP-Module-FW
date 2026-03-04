@@ -240,6 +240,8 @@ _Additional Note for Distributed TOEs_
 ** Destination Port
 
 [arabic, start=32]
+. If the TOE does not support the configuration of all possible values in the specified network protocol fields, the evaluator shall verify the TSS identifies which fields cannot filter all values, and for those fields which values cannot be filtered (implicitly or explicitly) by rules. For any field and value combinations that are not supported, the evaluator shall confirm the values are not IANA recognized values. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the TSS identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
+
 . The evaluator shall verify that each rule can identify the following actions: permit or drop with the option to log the operation. The evaluator shall verify that the TSS identifies all interface types subject to the stateful packet filtering policy and explains how rules are associated with distinct network interfaces.
 
 ===== Guidance Documentation
@@ -269,6 +271,7 @@ _Additional Note for Distributed TOEs_
 ** Destination Port
 
 [arabic, start=34]
+. If the TOE does not support the configuration of rules to filter all possible values in the fields identified in FFW_RUL_EXT.1.2, the evaluator shall verify the Guidance describes which field and value combinations are not filterable. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the Guidance identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
 . The evaluator shall verify that the guidance documentation indicates that each rule can identify the following actions: permit, drop, and log.
 . The evaluator shall verify that the guidance documentation explains how rules are associated with distinct network interfaces.
 
@@ -328,9 +331,9 @@ _Additional Note for Distributed TOEs_
 . Test 3: The evaluator shall expire (i.e., reach timeout) the TCP session established per Test 1 as described in the TSS. The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
 . Test 4: The evaluator shall configure the TOE to permit and log UDP traffic. The evaluator shall establish a UDP session. Once a UDP session is established, the evaluator shall alter each of the session determining attributes (source and destination addresses, source and destination ports) one at a time in order to verify that the altered packets are not accepted as part of the established session.
 . Test 5: The evaluator shall expire (i.e., reach timeout) the UDP session established per Test 4 as described in the TSS. The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
-. Test 6: If ICMP is selected, the evaluator shall configure the TOE to permit and log ICMP traffic. The evaluator shall establish a session for ICMP as defined in the TSS. Once an ICMP session is established, the evaluator shall alter each of the session determining attributes (source and destination addresses, other attributes chosen in FFW_RUL_EXT.1.5) one at a time in order to verify that the altered packets are not accepted as part of the established session.
-. Test 7: If applicable, the evaluator shall terminate the ICMP session established per Test 6 as described in the TSS. The evaluator shall then immediately send a packet matching the former session definition in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
-. Test 8: The evaluator shall expire (i.e., reach timeout) the ICMP session established per Test 6 as described in the TSS. The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
+. Test 6 [Conditional]: If ICMP is selected, the evaluator shall configure the TOE to permit and log ICMP traffic. The evaluator shall establish a session for ICMP as defined in the TSS. Once an ICMP session is established, the evaluator shall alter each of the session determining attributes (source and destination addresses, other attributes chosen in FFW_RUL_EXT.1.5) one at a time in order to verify that the altered packets are not accepted as part of the established session.
+. Test 7 [Conditional]: If applicable, the evaluator shall terminate the ICMP session established per Test 6 as described in the TSS. The evaluator shall then immediately send a packet matching the former session definition in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
+. Test 8 [Conditional]: The evaluator shall expire (i.e., reach timeout) the ICMP session established per Test 6 as described in the TSS. The evaluator shall then send a packet matching the former session in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
 
 ==== FFW_RUL_EXT.1.6
 
@@ -342,7 +345,7 @@ _Additional Note for Distributed TOEs_
 [loweralpha]
 . Packets which are invalid fragments, including a description of what constitutes an invalid fragment
 . Fragments that cannot be completely re-assembled
-. Packets where the source address is defined as being on a broadcast network
+. Packets where the source address is defined as being on a broadcast network for IPv4
 . Packets where the source address is defined as being on a multicast network
 . Packets where the source address is defined as being a loopback address
 . The TSF shall reject and be capable of logging network packets where the source or destination address of the network packet is defined as being unspecified (i.e. 0.0.0.0) or an address “reserved for future use” (i.e. 240.0.0.0/4) as specified in RFC 5735 for IPv4;
@@ -358,7 +361,7 @@ _Additional Note for Distributed TOEs_
 ===== Tests
 
 [arabic, start=57]
-. Both IPv4 and IPv6 shall be tested for items a), b), c), d), and e) of the SFR element. Both IPv4 and IPv6 shall be tested for item i) unless the rule definition is specific to IPv4 or IPv6. Note: f), g), and h) are specific to IPv4 or IPv6 and shall be tested accordingly.
+. Both IPv4 and IPv6 shall be tested for items a), b), d), and e) of the SFR element. Only IPv4 shall be tested for item c). Both IPv4 and IPv6 shall be tested for item i) unless the rule definition is specific to IPv4 or IPv6. Note: f), g), and h) are specific to IPv4 or IPv6 and shall be tested accordingly.
 . Test 1: The evaluator shall test each of the conditions a.) through i.) for automatic packet rejection in turn. In each case, the TOE should be configured to allow all network traffic and the evaluator shall generate a packet or packet fragment that is to be rejected. The evaluator shall use packet captures to ensure that the unallowable packet or packet fragment is not passed through the TOE.
 . Test 2: For each of the cases above, the evaluator shall use any applicable guidance to enable dropped packet logging or counting. In each case above, the evaluator shall ensure that the rejected packet or packet fragment was recorded (either logged or an appropriate counter incremented).
 
