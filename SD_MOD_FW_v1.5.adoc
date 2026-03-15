@@ -246,7 +246,7 @@ _Additional Note for Distributed TOEs_
 
 ===== Guidance Documentation
 
-[arabic, start=33]
+[arabic, start=34]
 . The evaluators shall verify that the guidance documentation identifies the following attributes as being configurable within stateful traffic filtering rules for the associated protocols:
 
 * ICMPv4
@@ -270,14 +270,14 @@ _Additional Note for Distributed TOEs_
 ** Source Port
 ** Destination Port
 
-[arabic, start=34]
+[arabic, start=35]
 . If the TOE does not support the configuration of rules to filter all possible values in the fields identified in FFW_RUL_EXT.1.2, the evaluator shall verify the Guidance describes which field and value combinations are not filterable. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the Guidance identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
 . The evaluator shall verify that the guidance documentation indicates that each rule can identify the following actions: permit, drop, and log.
 . The evaluator shall verify that the guidance documentation explains how rules are associated with distinct network interfaces.
 
 ===== Tests
 
-[arabic, start=36]
+[arabic, start=38]
 . Test 1: The evaluator shall use the instructions in the guidance documentation to test that stateful packet filter firewall rules can be created that permit, drop, and log packets for each of the following attributes:
 
 * ICMPv4
@@ -301,7 +301,7 @@ _Additional Note for Distributed TOEs_
 ** Source Port
 ** Destination Port
 
-[arabic, start=37]
+[arabic, start=39]
 . Test 2: Repeat the test evaluation activity above to ensure that stateful traffic filtering rules can be defined for each distinct network interface type supported by the TOE.
 . Note that these test activities should be performed in conjunction with those of FFW_RUL_EXT.1.9 where the effectiveness of the rules is tested. The test activities for FFW_RUL_EXT.1.9 define the protocol/attribute combinations required to be tested.
 
@@ -309,7 +309,7 @@ _Additional Note for Distributed TOEs_
 
 ===== TSS
 
-[arabic, start=39]
+[arabic, start=41]
 . The evaluator shall verify that the TSS identifies the protocols that support stateful session handling. The TSS shall identify TCP, UDP, and, if selected by the ST author, also ICMP.
 . The evaluator shall verify that the TSS describes how stateful sessions are established (including handshake processing) and maintained.
 . The evaluator shall verify that for TCP, the TSS identifies and describes the use of the following attributes in session determination: source and destination addresses, source and destination ports, sequence number, and individual flags.
@@ -319,12 +319,12 @@ _Additional Note for Distributed TOEs_
 
 ===== Guidance Documentation
 
-[arabic, start=45]
+[arabic, start=47]
 . The evaluator shall verify that the guidance documentation describes stateful session behaviours. For example, a TOE might not log packets that are permitted as part of an existing session.
 
 ===== Tests
 
-[arabic, start=46]
+[arabic, start=48]
 . The following tests shall be run using IPv4 and IPv6.
 . Test 1: The evaluator shall configure the TOE to permit and log TCP traffic. The evaluator shall initiate a TCP session. While the TCP session is being established, the evaluator shall introduce session establishment packets with incorrect flags to determine that the altered traffic is not accepted as part of the session (i.e., a log event is generated to show the ruleset was applied). After a TCP session is successfully established, the evaluator shall alter each of the session determining attributes (source and destination addresses, source and destination ports, sequence number, flags) one at a time in order to verify that the altered packets are not accepted as part of the established session.
 . Test 2: The evaluator shall terminate the TCP session established per Test 1 as described in the TSS. The evaluator shall then send a packet within one second matching the former session definition in order to ensure it is not forwarded through the TOE without being subject to the ruleset.
@@ -339,7 +339,7 @@ _Additional Note for Distributed TOEs_
 
 ===== TSS
 
-[arabic, start=55]
+[arabic, start=57]
 . The evaluator shall verify that the TSS identifies the following as packets that will be automatically dropped and are counted or logged:
 
 [loweralpha]
@@ -355,12 +355,12 @@ _Additional Note for Distributed TOEs_
 
 ===== Guidance Documentation
 
-[arabic, start=56]
+[arabic, start=58]
 . The evaluator shall verify that the guidance documentation describes packets that are discarded and potentially logged by default. If applicable protocols are identified, their descriptions need to be consistent with the TSS. If logging is configurable, the evaluator shall verify that applicable instructions are provided to configure auditing of automatically rejected packets.
 
 ===== Tests
 
-[arabic, start=57]
+[arabic, start=59]
 . Both IPv4 and IPv6 shall be tested for items a), b), d), and e) of the SFR element. Only IPv4 shall be tested for item c). Both IPv4 and IPv6 shall be tested for item i) unless the rule definition is specific to IPv4 or IPv6. Note: f), g), and h) are specific to IPv4 or IPv6 and shall be tested accordingly.
 . Test 1: The evaluator shall test each of the conditions a.) through i.) for automatic packet rejection in turn. In each case, the TOE should be configured to allow all network traffic and the evaluator shall generate a packet or packet fragment that is to be rejected. The evaluator shall use packet captures to ensure that the unallowable packet or packet fragment is not passed through the TOE.
 . Test 2: For each of the cases above, the evaluator shall use any applicable guidance to enable dropped packet logging or counting. In each case above, the evaluator shall ensure that the rejected packet or packet fragment was recorded (either logged or an appropriate counter incremented).
@@ -369,7 +369,7 @@ _Additional Note for Distributed TOEs_
 
 ===== TSS
 
-[arabic, start=60]
+[arabic, start=62]
 . The evaluator shall verify that the TSS explains how the following traffic can be dropped and counted or logged:
 +
 [loweralpha]
@@ -379,12 +379,12 @@ _Additional Note for Distributed TOEs_
 
 ===== Guidance Documentation
 
-[arabic, start=61]
+[arabic, start=63]
 . The evaluator shall verify that the guidance documentation describes how the TOE can be configured to implement the required rules. If logging is configurable, the evaluator shall verify that applicable instructions are provided to configure auditing of automatically rejected packets.
 
 ===== Tests
 
-[arabic, start=62]
+[arabic, start=64]
 . The following tests shall be run using IPv4 and IPv6.
 . Test 1: The evaluator shall configure the TOE to drop and log network traffic where the source address of the packet matches that of the TOE network interface upon which the traffic was received. The evaluator shall generate suitable network traffic to match the configured rule and verify that the traffic is dropped and a log message generated.
 . Test 2: The evaluator shall configure the TOE to drop and log network traffic where the source IP address of the packet fails to match the network reachability information of the interface to which it is targeted, e.g. if the TOE believes that network 192.168.1.0/24 is reachable through interface 2, network traffic with a source address from the 192.168.1.0/24 network should be generated and sent to an interface other than interface 2. The evaluator shall verify that the network traffic is dropped, and a log message generated.
@@ -393,17 +393,17 @@ _Additional Note for Distributed TOEs_
 
 ===== TSS
 
-[arabic, start=65]
+[arabic, start=67]
 . The evaluator shall verify that the TSS describes the algorithm applied to incoming packets, including the processing of default rules, determination of whether a packet is part of an established session, and application of administrator defined and ordered ruleset. If the TOE implements a mechanism that ensures that no conflicting rules can be configured, the TSS shall describe the underlying mechanism.
 
 ===== Guidance Documentation
 
-[arabic, start=66]
+[arabic, start=68]
 . The evaluator shall verify that the guidance documentation describes how the order of stateful traffic filtering rules is determined and provides the necessary instructions so that an administrator can configure the order of rule processing.
 
 ===== Tests
 
-[arabic, start=67]
+[arabic, start=69]
 . Test 1: If the TOE implements a mechanism that ensures that no conflicting rules can be configured, the evaluator shall try to configure two conflicting rules and verify that the TOE rejects the conflicting rule(s). It is important to verify that the mechanism is implemented in the TOE but not in the non-TOE environment. If the TOE does not implement a mechanism that ensures that no conflicting rules can be configured, the evaluator shall devise two equal stateful traffic filtering rules with alternate operations – permit and drop. The rules should then be deployed in two distinct orders and in each case the evaluator shall ensure that the first rule is enforced in both cases by generating applicable packets and using packet capture and logs for confirmation.
 . Test 2: The evaluator shall repeat the procedure above, except that the two rules should be devised where one is a subset of the other (e.g., a specific address vs. a network segment). Again, the evaluator should test both orders to ensure that the first is enforced regardless of the specificity of the rule.
 
@@ -411,34 +411,34 @@ _Additional Note for Distributed TOEs_
 
 ===== TSS
 
-[arabic, start=69]
+[arabic, start=71]
 . The evaluator shall verify that the TSS describes the process for applying stateful traffic filtering rules and also that the behavior (either by default, or as configured by the administrator) is to deny packets when there is no rule match unless another required conditions allows the network traffic (i.e., FFW_RUL_EXT.1.5 or FFW_RUL_EXT.2.1).
 
 ===== Guidance Documentation
 
-[arabic, start=70]
+[arabic, start=72]
 . The evaluator shall verify that the guidance documentation describes the behavior if no rules or special conditions apply to the network traffic. If the behavior is configurable, the evaluator shall verify that the guidance documentation provides the appropriate instructions to configure the behavior to deny packets with no matching rules.
 
 ===== Tests
 
-[arabic, start=71]
+[arabic, start=73]
 . For each attribute in FFW_RUL_EXT.1.2, the evaluator shall construct a test to demonstrate that the TOE can correctly compare the attribute from the packet header to the ruleset and shall demonstrate both the permit and deny for each case. It shall also be verified that a packet is dropped if no matching rule can be identified for the packet. The evaluator shall check the log in each case to confirm that the relevant rule was applied. The evaluator shall record a packet capture for each test to demonstrate the correct TOE behaviour.
 
 ==== FFW_RUL_EXT.1.10
 
 ===== TSS
 
-[arabic, start=72]
+[arabic, start=74]
 . The evaluator shall verify that the TSS describes how the TOE tracks and maintains information relating to the number of half-open TCP connections. The TSS should identify how the TOE behaves when the administratively defined limit is reached and should describe under what circumstances stale half-open connections are removed (e.g. after a timer expires).
 
 ===== Guidance Documentation
 
-[arabic, start=73]
+[arabic, start=75]
 . The evaluator shall verify that the guidance documentation describes the behaviour of imposing TCP half-open connection limits and its default state if unconfigured. The evaluator shall verify that the guidance clearly indicates the conditions under which new connections will be dropped e.g. per-destination or per-client.
 
 ===== Tests
 
-[arabic, start=74]
+[arabic, start=76]
 . The following tests shall be run using IPv4 and IPv6.
 . Test 1: The evaluator shall define a TCP half-open connection limit on the TOE. The evaluator shall generate TCP SYN requests to pass through the TOE to the target system using a randomised source IP address and common destination IP address. The number of SYN requests should exceed the TCP half-open threshold defined on the TOE. TCP SYN-ACK messages should not be acknowledged. The evaluator shall verify through packet capture that once the defined TCP half-open threshold has been reached, subsequent TCP SYN packets are not transmitted to the target system. The evaluator shall verify that when the configured threshold is reached that, depending upon the selection, either a log entry is generated or a counter is incremented.
 
@@ -446,7 +446,7 @@ _Additional Note for Distributed TOEs_
 
 ==== FMT_SMF.1/FFW Specification of Management Functions
 
-[arabic, start=76]
+[arabic, start=78]
 . The evaluation activities specified for FMT_SMF.1 in the Supporting Document for the PP-Module Base shall be applied in the same way to the newly added management functions defined in FMT_SMF.1/FFW in the FW Module.
 
 == Evaluation Activities for Optional Requirements defined in the PP-Module
@@ -459,38 +459,38 @@ _Additional Note for Distributed TOEs_
 
 ===== TSS
 
-[arabic, start=77]
+[arabic, start=79]
 . The evaluator shall verify that the TSS identifies the protocols that can cause the automatic creation of dynamic packet filtering rules. In some cases rather than creating dynamic rules, the TOE might establish stateful sessions to support some identified protocol behaviours.
 . The evaluator shall verify that the TSS explains the dynamic nature of session establishment and removal. The TSS also shall explain any logging ramifications.
 . The evaluator shall verify that for each of the protocols selected, the TSS explains the dynamic nature of session establishment and removal specific to the protocol.
 
 ===== Guidance Documentation
 
-[arabic, start=80]
+[arabic, start=82]
 . The evaluator shall verify that the guidance documentation describes dynamic session establishment capabilities.
 . The evaluator shall verify that the guidance documentation describes the logging of dynamic sessions consistent with the TSS.
 
 ===== Tests
 
-[arabic, start=82]
+[arabic, start=84]
 . Test 1: The evaluator shall define stateful traffic filtering rules to permit and log traffic for each of the supported protocols and drop and log TCP and UDP ports above 1024. Subsequently, the evaluator shall establish a connection for each of the selected protocols in order to ensure that it succeeds. The evaluator shall examine the generated logs to verify they are consistent with the guidance documentation.
 . Test 2: Continuing from Test 1, the evaluator shall determine (e.g., using a packet sniffer) which port above 1024 opened by the control protocol, terminate the connection session, and then verify that TCP or UDP (depending on the protocol selection) packets cannot be sent through the TOE using the same source and destination addresses and ports.
 . Test 3: For each additionally supported protocol, the evaluator shall repeat the procedure above for the protocol. In each case the evaluator must use the applicable RFC or standard in order to determine what range of ports to block in order to ensure the dynamic rules are created and effective.
 
 == Evaluation Activities for Selection-Based Requirements defined in the PP-Module
 
-[arabic, start=85]
+[arabic, start=87]
 . No additional selection-based requirements are defined in [MOD-FW] over and above those defined in [PP-ND].
 
 == Evaluation Activities for SARs
 
-[arabic, start=86]
+[arabic, start=88]
 . No additional Evaluation Activities for SARs (over and above those in [SD-ND]) are defined here. The evaluator shall perform the SAR Evaluation Activities defined in the NDcPP Supporting Document against the entire TOE (i.e. both the network device portion and the stateful firewall portion).
 . The evaluator shall also supplement the AVA_VAN.1 Evaluation Activities with the materials provided in Annex A of the current document.
 
 == Required Supplementary Information
 
-[arabic, start=88]
+[arabic, start=90]
 . No additional Required Supplementary Information (over and above that in [SD-ND]) is defined here.
 
 == References
@@ -526,17 +526,17 @@ Version 4.0, 25 November 2025
 [appendix]
 ==  Vulnerability Analysis
 
-[arabic, start=89]
+[arabic, start=91]
 . [SD-ND] contains the details of the vulnerability analysis process to be followed; that information is not repeated here. The additional information that is needed for vulnerability analysis for TOEs conforming to [CONF-FW] is contained in the following sections.
 
 === A.1 Sources of vulnerability information
 
-[arabic, start=90]
+[arabic, start=92]
 . [SD-ND] identifies the 4 types of flaws to be considered by the evaluation team. For each type, the following additional information is provided for TOEs conforming to [CONF-FW].
 
 ==== A.1.1 Type 1 Hypotheses – Public-Vulnerability-Based
 
-[arabic, start=91]
+[arabic, start=93]
 . The list of public sources of vulnerability information selected by the iTC is given in Section A.4 of [SD-ND]. Any additional sources specifically for firewalls will be specified in chapter A.4 of this document.
 . The evaluators shall perform a search on the sources listed in Section A.4 of [SD-ND] to determine a list of potential flaw hypotheses that are more recent that the publication date of the PP-Module, and those that are specific to the TOE and its components as specified by the additional documentation mentioned above. Any duplicates – either in a specific entry, or in the flaw hypothesis that is generated from an entry from the same or a different source – can be noted and removed from consideration by the evaluation team.
 . The search criteria to be used when searching the sources published after the publication date of the cPP shall include:
@@ -546,49 +546,49 @@ Version 4.0, 25 November 2025
 * Any protocols not listed above supported (through an SFR) by the TOE.
 * The TOE name (including appropriate model information as appropriate)
 
-[arabic, start=94]
+[arabic, start=96]
 . As part of type 1 flaw hypothesis generation for the specific components of the TOE, the evaluator shall also search the component manufacturer’s websites to determine if flaw hypotheses can be generated on this basis (for instance, if security patches have been released for the version of the component being evaluated, the subject of those patches may form the basis for a flaw hypothesis).
 
 ==== A.1.2 Type 2 Hypotheses – iTC-Sourced
 
-[arabic, start=95]
+[arabic, start=97]
 . Section A.5 of [SD-ND] contains the list of flaw hypothesis generated by the iTC for this technology that must be considered by the evaluation team as flaw hypotheses in performing the vulnerability assessment. Section A.5 of this document contains additional flaw hypothesis generated by the iTC specifically for firewalls.
 . If the evaluators discover a Type 3 or Type 4 flaw that they believe should be considered as a Type 2 flaw in future versions of this PP-Module, they should work with their Certification Body to determine the appropriate means of submitting the flaw for consideration by the iTC.
 
 ==== A.1.3 Type 3 Hypotheses – Evaluation-Team-Generated
 
-[arabic, start=97]
+[arabic, start=99]
 . Type 3 flaws are formulated by the evaluator based on information presented by the product (through on-line help, product documentation and guidance documentation, etc.) and product behaviour during the (functional) testing activities. The evaluator is also free to formulate flaws that are based on material that is not part of the baseline evidence (e.g., information gleaned from an Internet mailing list, or reading interface documentation on interfaces not included in the set provided by the developer), although such activities have the potential to vary significantly based upon the product and evaluation facility performing the analysis.
 . If the evaluators discover a Type 3 flaw that they believe should be considered as a Type 2 flaw in future versions of this PP-Module, they should work with their Certification Body to determine the appropriate means of submitting the flaw for consideration by the iTC.
 
 ==== A.1.4 Type 4 Hypotheses – Tool-Generated
 
-[arabic, start=99]
+[arabic, start=101]
 . There are no Type 4 hypotheses that apply to the TOE beyond those defined by [SD-ND].
 . If the evaluators discover a Type 4 flaw that they believe should be considered as a Type 2 flaw in future versions of this PP-Module, they should work with their Certification Body to determine the appropriate means of submitting the flaw for consideration by the iTC.
 
 === A.2 Process for Evaluator Vulnerability Analysis
 
-[arabic, start=101]
+[arabic, start=103]
 . The process to be followed is described in [SD-ND].
 
 === A.3 Reporting
 
-[arabic, start=102]
+[arabic, start=104]
 . Reporting activities are described in [SD-ND].
 
 === A.4 Additional Public Vulnerability Sources
 
-[arabic, start=103]
+[arabic, start=105]
 . [SD-ND] identifies the relevant public vulnerability sources to be consulted. There are no additional public vulnerability sources identified specifically for firewalls.
 
 === A.5 Additional Flaw Hypotheses
 
-[arabic, start=104]
+[arabic, start=106]
 . No entries are currently defined for this list.
 
 [appendix]
 ==  Firewall Equivalency Considerations
 
-[arabic, start=105]
+[arabic, start=107]
 . No additional Equivalency Considerations (over and above those in [SD-ND]) are defined here.
