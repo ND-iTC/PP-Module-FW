@@ -13,7 +13,7 @@ Date: 02-December-2025
 
 == Acknowledgements 
 
-This PP-Module was developed by the Network international Technical Community (ND iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
+This PP-Module was developed by the Network international Technical Community (ND-iTC) with representatives from industry, Government agencies, Common Criteria Test Laboratories, and members of academia.
 
 == Preface
 
@@ -29,7 +29,7 @@ The scope of the PP-Module within the development and evaluation process is desc
 
 The target audiences of this PP-Module are developers, CC consumers, system integrators, evaluators and schemes.
 
-Although the PP-Configuration, PP-Module and SDs may contain minor editorial errors, PP-Modules are recognized as living documents and the iTCs are dedicated to ongoing updates and revisions. Please report any issues to the ND iTC.
+Although the PP-Configuration, PP-Module and SDs may contain minor editorial errors, PP-Modules are recognized as living documents and the iTCs are dedicated to ongoing updates and revisions. Please report any issues to the ND-iTC.
 
 === Related Documents
 
