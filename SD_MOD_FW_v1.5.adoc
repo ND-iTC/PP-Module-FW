@@ -10,7 +10,7 @@
 
 = Supporting Document - Evaluation Activities for Stateful Traffic Filter Firewalls PP-Module
 
-Version: 2.0 draft +
+Version: 2.0 +
 Date: December-2025
 
 CCDB-2025-December-02
@@ -21,29 +21,29 @@ This Supporting Document was developed by the Network international Technical Co
 
 *Preface*
 
-This is a supporting document, intended to complement the Common Criteria version 3 and the associated Common Evaluation Methodology for Information Technology Security Evaluation.
+This is a supporting document intended to complement the Common Criteria for Information Technology Security Evaluation (CC:2022) and the associated Common Evaluation Methodology (CEM:2022).
 
-Supporting documents may be “Guidance Documents”, that highlight specific approaches and application of the standard to areas where no mutual recognition of its application is required, and as such, are not of normative nature, or “Mandatory Technical Documents”, whose application is mandatory for evaluations whose scope is covered by that of the supporting document. The usage of the latter class is not only mandatory, but certificates issued as a result of their application are recognized under the CCRA.
+Supporting documents may be “Guidance Documents”, that highlight specific approaches and application of the standard to areas where no mutual recognition of its application is required, and as such are not normative in nature, or “Mandatory Technical Documents”, whose application is mandatory for evaluations whose scope is covered by that of the supporting document. The usage of the latter class is not only mandatory, but certificates issued as a result of their application are recognized under the CCRA.
 
-This supporting document has been developed by the Network International Technical Community (NDFW-iTC) and is designed to be used to support the evaluations of products against the cPPs identified in section 1.1.
+This supporting document has been developed by the Network Device International Technical Community (ND-iTC) and is designed to support evaluations of products against the cPPs identified in Section 1.1.
 
-*Technical Editor:* Network International Technical Community (NDFW-iTC)
+*Technical Editor:* Network International Technical Community (ND-iTC)
 
 *Revision History*
 
-V1.1, 05 April 2019 (Initial release for public review)
+[width="100%",cols="17%,19%,63%",options="header",]
+|===
+|*Version* |*Date* |*Description* 
+|2.0 |02-December-2025 |Version for NDcPP V4.0
+|1.4e |25-June-2020 |Added link to allowed-with list for FW Module 
+|1.4 |6-April-2020 |Version for NDcPP V2.2e 
+|1.3 |27-September-2019 |Release version 
+|1.2 |19-July-2019 |Integration of comments 
+|1.1 |05-April-2019 |Updated PP-Module version of FWcPP 
+|1.0 |26-November-2018 |First PP-Module version of FWcPP
+|===
 
-V1.2 July 2019 (Updated version)
-
-V1.3 September 2019 (Release version)
-
-V1.4 April 2020 (Version for NDcPP V2.2e)
-
-V1.4e June 2020 (Updated version for NDcPP V2.2e)
-
-V2.0 December 2025 (Updated version for NDcPP V4.0; CC:2022)
-
-*General Purpose:* See section 1.1.
+*General Purpose:* See Section 1.1.
 
 *Field of special use:* This Supporting Document applies to the evaluation of TOEs claiming conformance with the PP-Module for Stateful Traffic Filter Firewalls [MOD-FW].
 
@@ -64,7 +64,7 @@ toc::[]
 . This Supporting Document is mandatory for evaluations of TOEs that claim conformance to the following PP-Configuration:
 +
 [loweralpha]
-.. PP-Configuration for Stateful Traffic Filter Firewalls, version 2.0 draft [CONF-FW].
+.. PP-Configuration for Stateful Traffic Filter Firewalls, version 2.0 [CONF-FW].
 
 [arabic, start=3]
 . Although Evaluation Activities are defined mainly for the evaluators to follow, in general the definition of Evaluation Activities will also help Developers to prepare for evaluation by identifying specific requirements for their TOE. The specific requirements in Evaluation Activities may in some cases clarify the meaning of SFRs and may identify particular requirements for the content of Security Targets (especially the TOE Summary Specification), guidance documentation, and possibly supplementary information (e.g. for entropy analysis or cryptographic key management architecture).
@@ -140,7 +140,7 @@ _Additional Note for Distributed TOEs_
 
 [arabic, start=17]
 . For a distributed TOE, all examination of Operational Guidance information should be extended to include confirmation that it defines sufficient information to configure individual components such that the overall TOE is correctly established.
-. Evaluation activities for SFRs must be carried out for all distributed TOE components that implement the SFR (as defined in the mapping of SFRs to components – cf. [ND-SD, 5.1.2]). This applies to optional and selection-based SFRs in section 3 and 4 as well as to the core SFRs in this section.
+. Evaluation activities for SFRs must be carried out for all distributed TOE components that implement the SFR (as defined in the mapping of SFRs to components – cf. [ND-SD, 5.1.2]). This applies to optional and selection-based SFRs in Section 3 and 4 as well as to the core SFRs in this section.
 
 === Security Audit (FAU)
 
@@ -510,10 +510,10 @@ _Additional Note for Distributed TOEs_
 [CC-E&I] Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024
 
 [MOD-FW] PP-Module for Stateful Traffic Filter Firewalls, +
-Version 2.0 draft, 02 December 2025
+Version 2.0, 02 December 2025
 
 [CONF-FW] PP-Configuration for Network Device and Stateful Traffic Filter Firewalls, +
-Version 2.0 draft, 02 December 2025
+Version 2.0, 02 December 2025
 
 [PP-ND] collaborative Protection Profile for Network Devices, +
 Version 4.0, 25 November 2025
