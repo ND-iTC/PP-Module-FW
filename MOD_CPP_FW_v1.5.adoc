@@ -167,7 +167,7 @@ The PP-Module specifies no additional assumptions compared to the PP-Module Base
 
 The PP-Module does not specify any additional Organizational Security Policies and does not refine or interpret any Organizational Security Policy defined in the PP-Module Base.
 
-The PP-Module Base does not define explicit Objectives for the TOE, but maps threats and Organisational Security Policies directly to SFRs. In this PP-Module, explicit security objectives for the TOE are defined and mapped to the additional threats for the PP-Module (the TOE security objectives are then mapped to the additional SFRs in this PP-Module). The mapping of SPD to implicit TOE security objectives as in the PP-Module Base continues to hold, and this PP-Module only adds security objectives. Therefore, the security objectives for the TOE defined in this PP-Module do not contradict the security objectives for the TOE in the PP-Module Base.
+The PP-Module Base maps threats and Organizational Security Policies directly to SFRs. The mapping of SPD to implicit TOE security objectives as in the PP-Module Base continues to hold, and this PP-Module only adds security objectives.
 
 The PP-Module does not specify any additional Security Objectives for the Environment and does not refine or interpret any Security Objectives for the Environment defined in the PP-Module Base. So PP-Module Base and PP-Module are consistent in this regard.
 
@@ -254,7 +254,7 @@ From an egress perspective, Stateful Traffic Filter Firewalls can be configured 
 
 ===== T.NETWORK_ACCESS
 
-With knowledge of the services that are advertised by machines on a subnet, an attacker may attempt to exploit those services by mounting attacks against the machines offering them.
+An attacker may attempt to connect to network servers inside a protected network providing services for external consumption from a network that is not intended to access these servers or services or via ports that are not intended to access these servers or services. An attacker may provide potentially malicious services in an external network that are not supposed to be accessed from within a protected network or only be accessed via specific ports.
 
 SFR Rationale:
 
@@ -270,7 +270,7 @@ From an egress perspective, Stateful Traffic Filter Firewalls can be configured 
 
 ===== T.NETWORK_MISUSE
 
-An attacker may attempt to use services that are advertised by machines in a way that is unintended by a site’s security policies. For example, an attacker might be able to use a service to “anonymize” the attacker’s machine as they mount attacks against others.
+Unauthorized agents may attempt to access network elements (e.g., virtual machines, internal networks, or interfaces) in a way that contravenes a defined security rule. This could result in the attacker finding an avenue (e.g., misconfiguration, flaw, or weak credential) to compromise a network element.
 
 SFR Rationale:
 
@@ -299,36 +299,11 @@ An organizational security policy is a set of rules, practices, and procedures i
 
 == Security Objectives 
 
-=== Security Objectives for the TOE
-
-The following subsections describe objectives for the TOE. Since the PP-Module Base does not specify any Objectives for the TOE this section contains only additional Objectives for the TOE related to the PP-Module but independent from the PP-Module Base.
-
-==== O.RESIDUAL_INFORMATION
-
-The TOE shall implement measures to ensure that any previous information content of network packets sent through the TOE is made unavailable either upon deallocation of the memory area containing the network packet or upon allocation of a memory area for a newly arriving network packet or both.
-
-==== O.STATEFUL_TRAFFIC_FILTERING
-
-The TOE shall perform stateful traffic filtering on network packets that it processes. For this the TOE shall support the definition of stateful traffic filtering rules that allow to permit or drop network packets. The TOE shall support assignment of the stateful traffic filtering rules to each distinct network interface. The TOE shall support the processing of the applicable stateful traffic filtering rules in an administratively defined order. The TOE shall deny the flow of network packets if no matching stateful traffic filtering rule is identified.
-
-Depending on the implementation, the TOE might support the stateful traffic filtering of Dynamic Protocols (optional).
-
 === Security Objectives for the Operational Environment
 
-All objectives for the Operational Environment of the PP-Module Base apply also to this PP-Module. OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are defined by the PP-Module Base and not the PP-Module.
+All objectives for the Operational Environment of the PP-Module Base apply also to this PP-Module. OE.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the traffic allowed to pass through the firewall (i.e., no additional protection for allowed traffic).
 
 ===  Security Objectives Rationale 
-
-==== Coverage for Objectives for the TOE
-
-The following table provides a mapping of the objectives for the TOE to threats and policies, showing that each objective is covered by at least one threat or policy.
-
-[width="100%",cols="51%,49%",]
-|===
-|*Objective for the TOE* |*Threat*
-|O.RESIDUAL_INFORMATION |T.NETWORK_MISUSE
-|O.STATEFUL_TRAFFIC_FILTERING |T.NETWORK_DISCLOSURE, T.NETWORK_ACCESS, T.NETWORK_MISUSE, T.MALICIOUS_TRAFFIC
-|===
 
 ==== Coverage for Objectives for the Operational Environment
 
@@ -345,23 +320,6 @@ The following table provides a mapping of objectives for the operational environ
 |OE.COMPONENTS_RUNNING |A.COMPONENTS_RUNNING
 |OE.RESIDUAL_INFORMATION |A.RESIDUAL_INFORMATION
 |OE.VM_CONFIGURATION |A.VS_CORRECT_CONFIGURATION, A.VS_ISOLATION
-|===
-
-==== Sufficiency for Objectives for the TOE
-
-The following rationale provides justification that the security objectives are suitable to counter each individual threat and that each security objective tracing back to a threat, when achieved, actually contributes to the removal of that threat:
-
-[width="100%",cols="40%,60%",options="header",]
-|===
-|*Threat* |*Rationale for security objectives to remove Threats*
-|T.NETWORK_DISCLOSURE |The TOE prevents unauthorized disclosure of network information by the ability to define, assign and process stateful traffic filtering rules which can be used to deny unintended flow of information as defined in O.STATEFUL_TRAFFIC_FILTERING.
-|T.NETWORK_ACCESS |The TOE prevents unauthorized access to protected devices and services by the ability to define, assign and process stateful traffic filtering rules as defined in O.STATEFUL_TRAFFIC_FILTERING.
-|T.NETWORK_MISUSE a|
-The TOE prevents network misuse traffic by the ability to define, assign and process stateful traffic filtering as defined in O.STATEFUL_TRAFFIC_FILTERING.
-
-The TOE prevents the unintended dissemination of data from packets after deletion by making any previous information content of network packets sent through the TOE unavailable either upon deallocation of the memory area containing the network packet or upon allocation of a memory area for a (new?) network packet (or both) as defined in O.RESIDUAL_INFORMATION.
-
-|T.MALICIOUS_TRAFFIC |The TOE prevents malformed traffic passing through the TOE by the ability to define, assign and process stateful traffic filtering rules as defined in O.STATEFUL_TRAFFIC_FILTERING.
 |===
 
 ==== Sufficiency for Objectives for the Operational Environment
