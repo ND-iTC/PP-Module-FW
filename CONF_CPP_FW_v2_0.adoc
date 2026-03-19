@@ -8,8 +8,8 @@
 
 = PP-Configuration for Network Device and Stateful Traffic Filter Firewalls
 
-Version: 2.0 +
-Date: 02-December-2025
+Version: 2.0 draft +
+Date: 08-December-2025
 
 *Acknowledgements:*
 
@@ -122,7 +122,7 @@ The scope of this PP-Configuration is to describe the security functionality of 
 This PP-Configuration is identified as follows:
 PP-Configuration Reference:  PP-Module for Network Device and Stateful Traffic Filter Firewalls
 PP-Configuration Version: 2.0
-PP-Configuration Date: 02 December 2025
+PP-Configuration Date: 08 December 2025
 PP-Configuration shorthand reference: CFG_NDcPP-FW_v2.0
 
 === PP-Configuration Components statement
