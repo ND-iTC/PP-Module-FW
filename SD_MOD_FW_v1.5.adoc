@@ -11,9 +11,9 @@
 = Supporting Document - Evaluation Activities for Stateful Traffic Filter Firewalls PP-Module
 
 Version: 2.0 +
-Date: December-2025
+Date: March-2026
 
-CCDB-2025-December-02
+CCDB-2026-March-TBD
 
 *Acknowledgements:*
 
@@ -34,7 +34,7 @@ This supporting document has been developed by the Network Device International 
 [width="100%",cols="17%,19%,63%",options="header",]
 |===
 |*Version* |*Date* |*Description* 
-|2.0 |02-December-2025 |Version for NDcPP V4.0
+|2.0 |TBD-March-2026 |Version for NDcPP V4.0
 |1.4e |25-June-2020 |Added link to allowed-with list for FW Module 
 |1.4 |6-April-2020 |Version for NDcPP V2.2e 
 |1.3 |27-September-2019 |Release version 
@@ -240,7 +240,7 @@ _Additional Note for Distributed TOEs_
 ** Destination Port
 
 [arabic, start=32]
-. If the TOE does not support the configuration of all possible values in the specified network protocol fields, the evaluator shall verify the TSS identifies which fields cannot filter all values, and for those fields which values cannot be filtered (implicitly or explicitly) by rules. For any field and value combinations that are not supported, the evaluator shall confirm the values are not IANA recognized values. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the TSS identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
+. If the TOE does not support the configuration of all possible values in the specified network protocol fields, the evaluator shall verify the TSS: identifies which fields cannot filter all values; and specifies, for those fields, which values cannot be filtered (implicitly or explicitly) by rules. For any field and value combinations that are not supported, evaluator shall confirm that any values described as unsupported or unfilterable are clearly identified in the TSS and do not undermine the TOE’s ability to enforce its security policy. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the TSS identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
 
 . The evaluator shall verify that each rule can identify the following actions: permit or drop with the option to log the operation. The evaluator shall verify that the TSS identifies all interface types subject to the stateful packet filtering policy and explains how rules are associated with distinct network interfaces.
 
@@ -510,10 +510,10 @@ _Additional Note for Distributed TOEs_
 [CC-E&I] Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024
 
 [MOD-FW] PP-Module for Stateful Traffic Filter Firewalls, +
-Version 2.0, 02 December 2025
+Version 2.0, TBD March 2026
 
 [CONF-FW] PP-Configuration for Network Device and Stateful Traffic Filter Firewalls, +
-Version 2.0, 02 December 2025
+Version 2.0, TBD March 2026
 
 [PP-ND] collaborative Protection Profile for Network Devices, +
 Version 4.0, 25 November 2025

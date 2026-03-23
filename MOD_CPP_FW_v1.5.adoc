@@ -9,7 +9,7 @@
 = PP-Module for Stateful Traffic Filter Firewalls
 
 Version: 2.0 +
-Date: 02-December-2025
+Date: TBD-March-2026
 
 == Acknowledgements 
 
@@ -61,7 +61,7 @@ CCMB-2022-11-006, CEM:2022, Revision 1, November 2022.
 [width="100%",cols="16%,84%",]
 |===
 |[PP-ND] |collaborative Protection Profile for Network Devices, Version 4.0, 25 November 2025
-|[SD-FW] |Evaluation Activities for Stateful Traffic Filter Firewalls PP-Configuration, Version 2.0, 02 December 2025
+|[SD-FW] |Evaluation Activities for Stateful Traffic Filter Firewalls PP-Configuration, Version 2.0, TBD March 2026
 |[SD-ND] |Evaluation Activities for Network Device cPP, Version 4.0, 25 November 2025
 |===
 
@@ -70,7 +70,7 @@ CCMB-2022-11-006, CEM:2022, Revision 1, November 2022.
 [width="100%",cols="17%,19%,63%",options="header",]
 |===
 |*Version* |*Date* |*Description* 
-|2.0 |02-December-2025 |Version for NDcPP V4.0
+|2.0 |TBD-March-2026 |Version for NDcPP V4.0
 |1.4e |25-June-2020 |Added link to allowed-with list for FW Module
 |1.4 |6-April-2020 |Version for NDcPP V2.2e 
 |1.3 |27-September-2019 |Release version 
@@ -131,9 +131,9 @@ This chapter provides introduction to the PP-Module which consists of sections o
 
 PP-Module Reference: PP-Module for Stateful Traffic Filter Firewalls
 
-PP-Module Version:  2.0
+PP-Module Version: 2.0
 
-PP-Module Date: 02-December-2025
+PP-Module Date: TBD-March-2026
 
 PP-Module Base on which the PP-Module relies: collaborative Protection Profile for Network Devices, Version 4.0, 25-November-2025
 
@@ -151,7 +151,7 @@ The combination of the PP-Module Base and this PP-Module specifically addresses 
 
 Stateful traffic filtering is the idea that the firewall would keep track of the state of each connection through it and have the ability to drop packets that do not appear to belong to a valid flow. Information such as the TCP sequence number, ACKs, IP options are also kept by storing the metrics in dynamic state tables. Other considerations in the decision to accept, drop, or log packets are source and destination IP addresses and ports, or when the source or destination addresses are inconsistent with the configured interfaces.
 
-Network devices that are marketed and sold as Stateful Traffic Filter Firewalls may also provide additional functionality, such as application filtering. To be evaluated against this PP-Module, a conformant TOE must claim conformance to a PP-Configuration that includes this PP-Module. Any product functionality that is not addressed by that PP-Configuration is considered to be outside the scope of evaluation and are not assessed as part of the evaluation process. In the future, additional PP-Modules may be created and included in PP-Configurations that provide a method to make security claims in relation to this additional functionality.
+Network devices that are marketed and sold as Stateful Traffic Filter Firewalls may also provide additional functionality, such as application filtering. To be evaluated against this PP-Module, a conformant TOE must claim conformance to a PP-Configuration that includes this PP-Module. Any product functionality that is not addressed by that PP-Configuration is considered to be outside the scope of evaluation and is not assessed as part of the evaluation process. In the future, additional PP-Modules may be created and included in PP-Configurations that provide a method to make security claims in relation to this additional functionality.
 
 This PP-Module may be used in PP-Configurations together with other PP-Modules in the future, to provide additional features such as application filtering.
 
@@ -163,7 +163,7 @@ The PP-Module specifies a TOE type which is a specific instantiation ('Stateful 
 
 The PP-Module specifies only additional threats which are independent from the threats of the PP-Module Base and does not refine or interpret any threat defined in the PP-Module Base. The additional threats are mapped only to additional SFRs specified in this PP-Module (not to any SFRs defined in the PP-Module Base) as well as some supporting SFRs (FAU_GEN.1, FMT_SMF.1/FFW) that extend existing SFRs in the PP-Module Base to cover the needs of the SFRs additionally defined in this PP-Module. So PP-Module Base and PP-Module are fully consistent regarding the threat definition.
 
-The PP-Module specifies no additional assumptions compared to the PP-Module Base and does not refine or interpret any assumption defined in the PP-Module Base. The assumption A.NO_THRU_TRAFFIC_PROTECTION defined in the PP-Module Base applies to the interfaces defined in the PP-Module Base only, though. The PP-Module Base and PP-Module therefore do not conflict with each other.
+The PP-Module specifies no additional assumptions compared to the PP-Module Base and does not refine or interpret any assumption defined in the PP-Module Base. The assumption A.NO_THRU_TRAFFIC_PROTECTION defined in the PP-Module Base applies to the traffic allowed to pass through the firewall only. The PP-Module applies this assumption consistently within the context of the Stateful Traffic Filter Firewall TOE type. The PP-Module Base and PP-Module therefore do not conflict with each other.
 
 The PP-Module does not specify any additional Organizational Security Policies and does not refine or interpret any Organizational Security Policy defined in the PP-Module Base.
 
@@ -291,7 +291,7 @@ SFR Rationale:
 
 === Assumptions
 
-All Assumptions of the PP-Module Base apply also to this PP-Module. A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the interfaces in the TOE that are defined by the PP-Module Base and not the PP-Module. This PP-Module extends the PP-Module Base threats (in Section 4.1) to deal with traffic passing through the firewall, and addresses these additional threats directly with the SFRs (FDP_RIP.2, FFW_RUL_EXT.1, FFW_RUL_EXT.2, FMT_SMF.1/FFW) in Section 6 and Annex A.
+All Assumptions of the PP-Module Base apply also to this PP-Module. A.NO_THRU_TRAFFIC_PROTECTION is still operative, but only for the traffic allowed to pass through the firewall. This PP-Module extends the PP-Module Base threats (in Section 4.1) to deal with traffic passing through the firewall, and addresses these additional threats directly with the SFRs (FDP_RIP.2, FFW_RUL_EXT.1, FFW_RUL_EXT.2, FMT_SMF.1/FFW) in Section 6 and Annex A.
 
 === Organizational Security Policy
 
@@ -676,7 +676,7 @@ This requirement is used to specify the behavior of a Stateful Traffic Filter Fi
 
 *Component levelling*
 
-image:extracted-media/FW/media/FFW_RUL_EXT.png[image,width=500,height=48]
+image::extracted-media/FW/media/FFW_RUL_EXT.png[width=80%]
 
 FFW_RUL_EXT.1 Stateful traffic filtering requires the TOE to filter network traffic based on a ruleset configured by an authorized administrator.
 
