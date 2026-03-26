@@ -37,18 +37,7 @@ No objects of this type are currently allowed with the PP-Module.
 
 *Allowed PP-Modules:*
 
-[cols="0,1,2",options=,]
-|===
-
-
-.4+|1.|Object ID:|TBD
-
-|Object version:|TBD
-
-|Owner:|TBD
-
-|Notes:|TBD
-|===
+TBD
 
 == FW Module v1.4e
 
