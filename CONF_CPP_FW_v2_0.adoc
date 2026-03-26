@@ -8,8 +8,8 @@
 
 = PP-Configuration for Network Device and Stateful Traffic Filter Firewalls
 
-Version: 2.0 draft +
-Date: 08-December-2025
+Version: 2.0 +
+Date: TBD-March-2026
 
 *Acknowledgements:*
 
@@ -57,13 +57,13 @@ CCMB-2022-11-003, CC:2022 Revision 1, November 2022.
 [cols="1,3"]
 |===
 | [MOD-FW]
-| PP-Module for Stateful Traffic Filter Firewalls, Version 2.0 draft, 08 December 2025
+| PP-Module for Stateful Traffic Filter Firewalls, Version 2.0, TBD-March-2026
 
 | [PP_ND]
 | collaborative Protection Profile for Network Devices, Version 4.0, 25 November 2025
 
 | [SD-FW]
-| Evaluation Activities for Stateful Traffic Filter Firewalls PP-Configuration, Version 2.0 draft, 08 December 2025
+| Evaluation Activities for Stateful Traffic Filter Firewalls PP-Configuration, Version 2.0, TBD March 2026
 
 | [SD-ND]
 | Evaluation Activities for Network Device cPP, Version 4.0, 25 November 2025
@@ -77,9 +77,9 @@ CCMB-2022-11-003, CC:2022 Revision 1, November 2022.
 | *Date*
 | *Description*
 
-| 2.0 draft
-| 08.12.2025
-| CC:2022 version, Addressed comments from CCMB
+| 2.0
+| TBD-March-2026
+| CC:2022 version
 
 | 1.4e
 | 25.06.2020
@@ -122,14 +122,14 @@ The scope of this PP-Configuration is to describe the security functionality of 
 This PP-Configuration is identified as follows:
 PP-Configuration Reference:  PP-Module for Network Device and Stateful Traffic Filter Firewalls
 PP-Configuration Version: 2.0
-PP-Configuration Date: 08 December 2025
+PP-Configuration Date: TBD-March-2026
 PP-Configuration shorthand reference: CFG_NDcPP-FW_v2.0
 
 === PP-Configuration Components statement
 
 This PP-Configuration consists of the following components:
 
-PP-Module Base: collaborative Protection Profile for Network Devices, Version 4.0, 25 November 2025 [PP-ND]  PP-Modules: PP-Module for Stateful Traffic Filter Firewalls, Version 2.0 draft, 08 December 2025 [MOD-FW]
+PP-Module Base: collaborative Protection Profile for Network Devices, Version 4.0, 25 November 2025 [PP-ND]  PP-Modules: PP-Module for Stateful Traffic Filter Firewalls, Version 2.0, TBD-March-2026 [MOD-FW]
 
 
 
