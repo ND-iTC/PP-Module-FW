@@ -13,7 +13,7 @@
 Version: 2.0 +
 Date: March-2026
 
-CCDB-2026-March-TBD
+CCDB-2026-March-30
 
 *Acknowledgements:*
 
@@ -34,7 +34,7 @@ This supporting document has been developed by the Network Device International 
 [width="100%",cols="17%,19%,63%",options="header",]
 |===
 |*Version* |*Date* |*Description* 
-|2.0 |TBD-March-2026 |Version for NDcPP V4.0
+|2.0 |30-March-2026 |Version for NDcPP V4.0
 |1.4e |25-June-2020 |Added link to allowed-with list for FW Module 
 |1.4 |6-April-2020 |Version for NDcPP V2.2e 
 |1.3 |27-September-2019 |Release version 
@@ -510,10 +510,10 @@ _Additional Note for Distributed TOEs_
 [CC-E&I] Errata and Interpretation for CC:2022 (Release 1) and CEM:2022 (Release 1), 002, Version 1.1, July 22, 2024
 
 [MOD-FW] PP-Module for Stateful Traffic Filter Firewalls, +
-Version 2.0, TBD March 2026
+Version 2.0, 30 March 2026
 
 [CONF-FW] PP-Configuration for Network Device and Stateful Traffic Filter Firewalls, +
-Version 2.0, TBD March 2026
+Version 2.0, 30 March 2026
 
 [PP-ND] collaborative Protection Profile for Network Devices, +
 Version 4.0, 25 November 2025
