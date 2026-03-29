@@ -197,7 +197,7 @@ _Additional Note for Distributed TOEs_
 
 [arabic, start=25]
 . The evaluator shall verify that the TSS provides a description of the TOE’s initialization/startup process, which clearly indicates where processing of network packets begins to take place, and provides a discussion that supports the assertion that packets cannot flow during this process.
-. The evaluator shall verify that the TSS also includes a narrative that identifies the hardware and/or software components involved in processing the network packets. Hardware components should identify at a minimum the processor (CPU) and network processor (NPU) used by the TOE. Software components may include applications, the operating system and other major components that are independently identifiable and reusable (outside the TOE). The evaluator shall verify that the TSS also describes the safeguards that would prevent packets flowing through the TOE without applying the ruleset in the event of a component failure. This could include the failure of a component, such as a process being terminated, or a failure within a component, such as memory buffers full and cannot process packets. The description shall also include a description how the TOE behaves in the situation where the traffic exceeds the amount of traffic the TOE can handle and how it is ensured that also in this condition stateful traffic filtering rules are still applied so that traffic does not pass that shouldn't pass according to the specified rules.
+. The evaluator shall verify that the TSS also includes a narrative that identifies the hardware and/or software components involved in processing the network packets. Hardware components should identify at a minimum the processor (CPU) and network processor (NPU) used by the TOE. Software components may include applications, the operating system and other major components that are independently identifiable and reusable (outside the TOE). The evaluator shall verify that the TSS also describes the safeguards that would prevent packets flowing through the TOE without applying the ruleset in the event of a component failure. This could include the failure of a component, such as a process being terminated, or a failure within a component, such as memory buffers full and cannot process packets. The description shall also include a description of how the TOE behaves in the situation where the traffic exceeds the amount of traffic the TOE can handle and how it is ensured that also in this condition stateful traffic filtering rules are still applied so that traffic does not pass that shouldn't pass according to the specified rules.
 
 ===== Guidance Documentation
 
@@ -240,7 +240,7 @@ _Additional Note for Distributed TOEs_
 ** Destination Port
 
 [arabic, start=32]
-. If the TOE does not support the configuration of all possible values in the specified network protocol fields, the evaluator shall verify the TSS: identifies which fields cannot filter all values; and specifies, for those fields, which values cannot be filtered (implicitly or explicitly) by rules. For any field and value combinations that are not supported, evaluator shall confirm that any values described as unsupported or unfilterable are clearly identified in the TSS and do not undermine the TOE’s ability to enforce its security policy. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the TSS identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
+. If the TOE does not support the configuration of all possible values in the specified network protocol fields, the evaluator shall verify the TSS: identifies which fields cannot filter all values; and specifies, for those fields, which values cannot be filtered (implicitly or explicitly) by rules. For any field and value combinations that are not supported, the evaluator shall confirm that any values described as unsupported or unfilterable are clearly identified in the TSS and do not undermine the TOE’s ability to enforce its security policy. If the TOE supports the implicit configuration of any values, the evaluator shall ensure the TSS identifies the specific configurations that result in the implicit configuration of a value (e.g., configuring ICMP type 8 implicitly configures ICMP code 0). 
 
 . The evaluator shall verify that each rule can identify the following actions: permit or drop with the option to log the operation. The evaluator shall verify that the TSS identifies all interface types subject to the stateful packet filtering policy and explains how rules are associated with distinct network interfaces.
 
@@ -320,7 +320,7 @@ _Additional Note for Distributed TOEs_
 ===== Guidance Documentation
 
 [arabic, start=47]
-. The evaluator shall verify that the guidance documentation describes stateful session behaviours. For example, a TOE might not log packets that are permitted as part of an existing session.
+. The evaluator shall verify that the guidance documentation describes stateful session behaviors. For example, a TOE might not log packets that are permitted as part of an existing session.
 
 ===== Tests
 
@@ -412,7 +412,7 @@ _Additional Note for Distributed TOEs_
 ===== TSS
 
 [arabic, start=71]
-. The evaluator shall verify that the TSS describes the process for applying stateful traffic filtering rules and also that the behavior (either by default, or as configured by the administrator) is to deny packets when there is no rule match unless another required conditions allows the network traffic (i.e., FFW_RUL_EXT.1.5 or FFW_RUL_EXT.2.1).
+. The evaluator shall verify that the TSS describes the process for applying stateful traffic filtering rules and also that the behavior (either by default, or as configured by the administrator) is to deny packets when there is no rule match unless another required condition allows the network traffic (i.e., FFW_RUL_EXT.1.5 or FFW_RUL_EXT.2.1).
 
 ===== Guidance Documentation
 
@@ -440,7 +440,7 @@ _Additional Note for Distributed TOEs_
 
 [arabic, start=76]
 . The following tests shall be run using IPv4 and IPv6.
-. Test 1: The evaluator shall define a TCP half-open connection limit on the TOE. The evaluator shall generate TCP SYN requests to pass through the TOE to the target system using a randomised source IP address and common destination IP address. The number of SYN requests should exceed the TCP half-open threshold defined on the TOE. TCP SYN-ACK messages should not be acknowledged. The evaluator shall verify through packet capture that once the defined TCP half-open threshold has been reached, subsequent TCP SYN packets are not transmitted to the target system. The evaluator shall verify that when the configured threshold is reached that, depending upon the selection, either a log entry is generated or a counter is incremented.
+. Test 1: The evaluator shall define a TCP half-open connection limit on the TOE. The evaluator shall generate TCP SYN requests to pass through the TOE to the target system using a randomized source IP address and common destination IP address. The number of SYN requests should exceed the TCP half-open threshold defined on the TOE. TCP SYN-ACK messages should not be acknowledged. The evaluator shall verify through packet capture that once the defined TCP half-open threshold has been reached, subsequent TCP SYN packets are not transmitted to the target system. The evaluator shall verify that when the configured threshold is reached that, depending upon the selection, either a log entry is generated or a counter is incremented.
 
 === Security management (FMT)
 
@@ -460,7 +460,7 @@ _Additional Note for Distributed TOEs_
 ===== TSS
 
 [arabic, start=79]
-. The evaluator shall verify that the TSS identifies the protocols that can cause the automatic creation of dynamic packet filtering rules. In some cases rather than creating dynamic rules, the TOE might establish stateful sessions to support some identified protocol behaviours.
+. The evaluator shall verify that the TSS identifies the protocols that can cause the automatic creation of dynamic packet filtering rules. In some cases rather than creating dynamic rules, the TOE might establish stateful sessions to support some identified protocol behaviors.
 . The evaluator shall verify that the TSS explains the dynamic nature of session establishment and removal. The TSS also shall explain any logging ramifications.
 . The evaluator shall verify that for each of the protocols selected, the TSS explains the dynamic nature of session establishment and removal specific to the protocol.
 
@@ -520,8 +520,6 @@ Version 4.0, 25 November 2025
 
 [SD-ND] Evaluation Activities for Network Device cPP, 4.0, 25 November 2025
 
-[SD-ND] Evaluation Activities for Network Device cPP, 4.0, 25 November 2025
-
 :sectnums!:
 
 [appendix]
@@ -539,7 +537,7 @@ Version 4.0, 25 November 2025
 
 [arabic, start=93]
 . The list of public sources of vulnerability information selected by the iTC is given in Section A.4 of [SD-ND]. Any additional sources specifically for firewalls will be specified in chapter A.4 of this document.
-. The evaluators shall perform a search on the sources listed in Section A.4 of [SD-ND] to determine a list of potential flaw hypotheses that are more recent that the publication date of the PP-Module, and those that are specific to the TOE and its components as specified by the additional documentation mentioned above. Any duplicates – either in a specific entry, or in the flaw hypothesis that is generated from an entry from the same or a different source – can be noted and removed from consideration by the evaluation team.
+. The evaluators shall perform a search on the sources listed in Section A.4 of [SD-ND] to determine a list of potential flaw hypotheses that are more recent than the publication date of the PP-Module, and those that are specific to the TOE and its components as specified by the additional documentation mentioned above. Any duplicates – either in a specific entry, or in the flaw hypothesis that is generated from an entry from the same or a different source – can be noted and removed from consideration by the evaluation team.
 . The search criteria to be used when searching the sources published after the publication date of the cPP shall include:
 
 * The term “firewall”
