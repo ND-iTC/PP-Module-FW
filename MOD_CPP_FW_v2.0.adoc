@@ -121,7 +121,7 @@ The scope of this PP-Module is to describe the security functionality of a firew
 
 * Collaborative Protection Profile for Network Device (NDcPP) Version 4.0
 
-A firewall is a specialized network device that deployed on the edge of a trusted internal network and untrusted external network and is designed to monitor, filter, and control incoming and outgoing network traffic based on a defined set of security rules.
+A firewall is a specialized network device that is deployed on the edge of a trusted internal network and untrusted external network and is designed to monitor, filter, and control incoming and outgoing network traffic based on a defined set of security rules.
 
 === PP-Module Introduction
 
@@ -159,7 +159,7 @@ This PP-Module may be used in PP-Configurations together with other PP-Modules i
 
 The PP-Module specifies only one PP-Module Base and fully inherits the conformance claim of the PP-Module Base.
 
-The PP-Module specifies a TOE type which is a specific instantiation ('Stateful Traffic Filter Firewall') of the more general TOE type defined in the PP-Module Base ('Network Device'). The PP-Module does not interpret any element of the PP-Module Base except for the impact of the more stricter TOE type definition.
+The PP-Module specifies a TOE type which is a specific instantiation ('Stateful Traffic Filter Firewall') of the general TOE type defined in the PP-Module Base ('Network Device'). The PP-Module does not interpret any element of the PP-Module Base except for the impact of the stricter TOE type definition.
 
 The PP-Module specifies only additional threats which are independent from the threats of the PP-Module Base and does not refine or interpret any threat defined in the PP-Module Base. The additional threats are mapped only to additional SFRs specified in this PP-Module (not to any SFRs defined in the PP-Module Base) as well as some supporting SFRs (FAU_GEN.1, FMT_SMF.1/FFW) that extend existing SFRs in the PP-Module Base to cover the needs of the SFRs additionally defined in this PP-Module. So PP-Module Base and PP-Module are fully consistent regarding the threat definition.
 
@@ -242,7 +242,7 @@ An attacker may attempt to “map” a subnet to determine the machines that res
 
 SFR Rationale:
 
-* Requirements to prevent unauthorised disclosure of network information are defined in FFW_RUL_EXT.1 and FFW_RUL_EXT.2 supported by FMT_SMF.1/FFW.
+* Requirements to prevent unauthorized disclosure of network information are defined in FFW_RUL_EXT.1 and FFW_RUL_EXT.2 supported by FMT_SMF.1/FFW.
 
 ==== Inappropriate Access to Services
 
@@ -258,7 +258,7 @@ An attacker may attempt to connect to network servers inside a protected network
 
 SFR Rationale:
 
-* Requirements to prevent unauthorised access to protected devices and services are defined in FFW_RUL_EXT.1 and FFW_RUL_EXT.2 supported by FMT_SMF.1/FFW
+* Requirements to prevent unauthorized access to protected devices and services are defined in FFW_RUL_EXT.1 and FFW_RUL_EXT.2 supported by FMT_SMF.1/FFW
 
 ==== Misuse of Services
 
@@ -333,7 +333,7 @@ The following rationale provides justification that the security objectives for 
 |A.LIMITED_FUNCTIONALITY |The assumption that the TOE does not provide any general purpose computing capabilities is addressed by the corresponding requirement in OE.NO_GENERAL_PURPOSE.
 |A.TRUSTED_ADMINISTRATOR |The assumption that the Security Administrator is trusted is addressed by the corresponding requirement in OE.TRUSTED_ADMIN.
 |A.REGULAR_UPDATES |The assumption that the devices firmware and software is updated regularly is addressed by the corresponding requirement in OE.UPDATES.
-|A.ADMIN_CREDENTIALS_SECURE |TThe assumption that the Security Administrator’s credentials are protected by the platform they are stored on is addressed by the corresponding requirement in OE.ADMIN_CREDENTIALS_SECURE.
+|A.ADMIN_CREDENTIALS_SECURE |The assumption that the Security Administrator’s credentials are protected by the platform they are stored on is addressed by the corresponding requirement in OE.ADMIN_CREDENTIALS_SECURE.
 |A.COMPONENTS_RUNNING |The assumption that each component of a distributed system is functioning properly is satisfied by the fact that this is specified as an expectation by OE.COMPONENTS_RUNNING.
 |A.RESIDUAL_INFORMATION |The assumption that the Security Administrator must ensure that there is no unauthorized access possible for sensitive residual information is addressed by the corresponding requirement in OE.RESIDUAL_INFORMATION.
 |A.VS_TRUSTED_ADMINISTRATOR (applies to vNDs only) |The assumption that the Security Administrator for the VS is trusted is addressed by the corresponding requirement in OE.TRUSTED_ADMIN.
@@ -646,7 +646,7 @@ The SFRs in this chapter are additional SFRs defined in this PP-Module which are
 
 _This element requires the specification of more complex protocols that require the firewall to allow network traffic flow even though an existing rule does not explicitly allow the flow. This SFR should be added if one or more of the listed protocols is supported but cannot be handled by using standard rules of the firewall according to FFW_RUL_EXT.1._
 
-_For example, the FTP protocol requires both a control connection and a data connection if a Security Administrator is to transfer files. While there are well-known ports involved, port 21 (control port on FTP server) and port 20 (data port on server in active mode), there are random ports > 1023 used on the client side. In passive mode, the FTP server may use a random port >1023 instead of port 20. The data connection is initiated by the client in passive mode, and imitated by the FTP server in active mode._
+_For example, the FTP protocol requires both a control connection and a data connection if a Security Administrator is to transfer files. While there are well-known ports involved, port 21 (control port on FTP server) and port 20 (data port on server in active mode), there are random ports > 1023 used on the client side. In passive mode, the FTP server may use a random port >1023 instead of port 20. The data connection is initiated by the client in passive mode, and initiated by the FTP server in active mode._
 
 _For these types of protocols, the establishment of a “new” connection is allowed, even though the ruleset may appear to deny it (e.g., since a rule cannot predict which random port will be used by the client or potentially the server, the default rule to deny may appear to apply). The TSF could create a dynamic rule that governs the traffic flow, or the TSF could implicitly allow the new connection to be established based on expectations of the protocol implementation as specified in the RFC or equivalent standard._
 

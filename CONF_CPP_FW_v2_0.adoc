@@ -141,7 +141,7 @@ PP-Module Base: collaborative Protection Profile for Network Devices, Version 4.
 As defined by the references [CC1], [CC2], [CC3], [CC4], [CC5], [CEM] and [CC-E&I], this PP-Configuration:
 conforms to the requirements of Common Criteria CC:2022, Release 1
 is Part 2 extended, Part 3 conformant
-does not claim conformance to any PP, PP-Module or PP-configuration.
+does not claim conformance to any PP, PP-Module, or PP-Configuration.
 In order to be conformant to this PP-Configuration, an ST must demonstrate Exact Conformance as inherited from the specified PP-Module Base.  This means that all of the SFRs in [PP-ND] section 6 and section 6 of the PP-Module [MOD-FW] must be included in an ST that claims conformance to this PP-Configuration. In addition, SFRs from [PP-ND], Annex A or Annex A of the PP-Module may be included (these are optional SFRs), and SFRs from Annex B of the PP-Module Base must be included according to the selections made, as described in [PP-ND], Annex B.
 No PP-Modules are allowed to specify this PP-Configuration as a PP-Module Base.
 
@@ -198,4 +198,4 @@ The Security Assurance Requirements applicable to this PP-Configuration are inhe
 
 |===
 
-The Supporting Documents provided for the PP_Module Base [SD-ND] and PP-Module [SD-FW] provide specific information with respect to the evaluation of the SARs listed in the table above.
+The Supporting Documents provided for the PP-Module Base [SD-ND] and PP-Module [SD-FW] provide specific information with respect to the evaluation of the SARs listed in the table above.
