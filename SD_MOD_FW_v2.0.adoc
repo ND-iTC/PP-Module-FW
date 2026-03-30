@@ -1,8 +1,8 @@
 :toc:
 :toclevels: 3
-:toc-title!:
+:toc-title: Table of Contents
 :toc-placement!:
-:doctype: book
+:doctype: article
 :chapter-label!:
 :data-uri:
 :appendix-caption: Annex
@@ -47,13 +47,15 @@ This supporting document has been developed by the Network Device International 
 
 *Field of special use:* This Supporting Document applies to the evaluation of TOEs claiming conformance with the PP-Module for Stateful Traffic Filter Firewalls [MOD-FW].
 
-
-*Table of Contents*
+<<<
 
 toc::[]
 
 :sectnums: all
 :sectnumlevels: 4
+
+
+<<<
 
 == Introduction
 
@@ -127,6 +129,9 @@ toc::[]
 |*TSS*|TOE Summary Specification
 |*UDP*|User Datagram Protocol
 |===
+
+
+<<<
 
 == Evaluation Activities for Mandatory SFRs defined in the PP-Module
 
@@ -449,6 +454,9 @@ _Additional Note for Distributed TOEs_
 [arabic, start=78]
 . The evaluation activities specified for FMT_SMF.1 in the Supporting Document for the PP-Module Base shall be applied in the same way to the newly added management functions defined in FMT_SMF.1/FFW in the FW Module.
 
+
+<<<
+
 == Evaluation Activities for Optional Requirements defined in the PP-Module
 
 === Firewall (FFW)
@@ -477,10 +485,16 @@ _Additional Note for Distributed TOEs_
 . Test 2: Continuing from Test 1, the evaluator shall determine (e.g., using a packet sniffer) which port above 1024 opened by the control protocol, terminate the connection session, and then verify that TCP or UDP (depending on the protocol selection) packets cannot be sent through the TOE using the same source and destination addresses and ports.
 . Test 3: For each additionally supported protocol, the evaluator shall repeat the procedure above for the protocol. In each case the evaluator must use the applicable RFC or standard in order to determine what range of ports to block in order to ensure the dynamic rules are created and effective.
 
+
+<<<
+
 == Evaluation Activities for Selection-Based Requirements defined in the PP-Module
 
 [arabic, start=87]
 . No additional selection-based requirements are defined in [MOD-FW] over and above those defined in [PP-ND].
+
+
+<<<
 
 == Evaluation Activities for SARs
 
@@ -488,10 +502,16 @@ _Additional Note for Distributed TOEs_
 . No additional Evaluation Activities for SARs (over and above those in [SD-ND]) are defined here. The evaluator shall perform the SAR Evaluation Activities defined in the NDcPP Supporting Document against the entire TOE (i.e. both the network device portion and the stateful firewall portion).
 . The evaluator shall also supplement the AVA_VAN.1 Evaluation Activities with the materials provided in Annex A of the current document.
 
+
+<<<
+
 == Required Supplementary Information
 
 [arabic, start=90]
 . No additional Required Supplementary Information (over and above that in [SD-ND]) is defined here.
+
+
+<<<
 
 == References
 
@@ -520,10 +540,11 @@ Version 4.0, 25 November 2025
 
 [SD-ND] Evaluation Activities for Network Device cPP, 4.0, 25 November 2025
 
-:sectnums!:
+<<<
 
 [appendix]
-==  Vulnerability Analysis
+
+== Vulnerability Analysis
 
 [arabic, start=91]
 . [SD-ND] contains the details of the vulnerability analysis process to be followed; that information is not repeated here. The additional information that is needed for vulnerability analysis for TOEs conforming to [CONF-FW] is contained in the following sections.
@@ -586,8 +607,11 @@ Version 4.0, 25 November 2025
 [arabic, start=106]
 . No entries are currently defined for this list.
 
+<<<
+
 [appendix]
-==  Firewall Equivalency Considerations
+
+== Firewall Equivalency Considerations
 
 [arabic, start=107]
 . No additional Equivalency Considerations (over and above those in [SD-ND]) are defined here.

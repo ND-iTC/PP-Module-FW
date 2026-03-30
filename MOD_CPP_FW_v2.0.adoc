@@ -79,6 +79,9 @@ CCMB-2022-11-006, CEM:2022, Revision 1, November 2022.
 |1.0 |26-November-2018 |First PP-Module version of FWcPP
 |===
 
+
+<<<
+
 == Contents
 
 toc::[]
@@ -105,15 +108,12 @@ toc::[]
 
 <<tbl-deps-optional,Table 5: SFR Dependencies Rationale for Optional SFRs>>
 
-<<tbl-coverage-mandatory,Table 6: SFR Coverage Mapping for Mandatory SFRs>>
-
-<<tbl-coverage-optional,Table 7: SFR Coverage Mapping for Optional SFRs>>
-
-<<tbl-sufficiency,Table 8: SFR Sufficiency Rationale>>
-
 
 :sectnums: all
 :sectnumlevels: 4
+
+
+<<<
 
 == Introduction
 
@@ -175,6 +175,9 @@ This PP-Module specifies only additional SFRs which are independent from the SFR
 
 All in all, this rationale demonstrates that a TOE can meet the TOE type descriptions provided in the PP-Module Base and in the PP-Module. A TOE can satisfy all the PP-Module Bases and the PP-Module SFRs. This consistency rationale demonstrates that the unions of the SPD, the objectives and the SFRs from the PP-Module Base and from the PP-Module do not lead to any contradiction. Due to the clear separation between the requirements of the PP-Module Base and the requirements of this PP-Module any correspondence tables would be trivial and have therefore been omitted.
 
+
+<<<
+
 == CC Conformance
 
 === PP-Module Conformance Claim
@@ -188,6 +191,9 @@ As defined by the references [CC1], [CC2], [CC3], [CC4], [CC5], [CEM] and [CC-E&
 This PP-Module inherits Exact Conformance as required from the specified PP-Module Base and as defined in [Exact Conformance Addendum]. This means that STs must claim exact conformance to PP-Configurations including this PP-Module and its PP-Module Base. This PP-Module requires the use of evaluation methods/evaluation activities defined in [SD-FW] and [SD-ND]. 
 
 The 'FW Module allowed-with list' that specifies the packages and PP-Modules to which exact conformance can be claimed in conjunction with this Module, can be found at https://nd-itc.github.io/AWL/FW_allowed_with_list.html.
+
+
+<<<
 
 == Introduction to Distributed TOEs
 
@@ -215,6 +221,9 @@ Table 1 specifies how each of the additional SFRs in this PP-Module must be met,
 [[tbl-dist-toe]]_Table 1: Additional SFRs for Distributed TOEs_
 
 The ST for a distributed TOE must include a mapping of SFRs to each of the components of the TOE. (Note that this deliverable is examined as part of the ASE_TSS.1 and AVA_VAN.1 Evaluation Activities as described in [SD-ND, 5.1.2] and [SD-ND, 5.6.1.1] respectively.) The ST for a distributed TOE may also introduce a “minimum configuration” and identify components that may have instances added to an operational configuration without affecting the validity of the CC certification. [SD-ND, A.9] describes Evaluation Activities relating to these equivalency aspects of a distributed TOE (and hence what is expected in the ST).
+
+
+<<<
 
 == Security Problem Definition
 
@@ -297,6 +306,9 @@ All Assumptions of the PP-Module Base apply also to this PP-Module. A.NO_THRU_TR
 
 An organizational security policy is a set of rules, practices, and procedures imposed by an organization to address its security needs. All organizational security policies of the PP-Module Base apply also to this PP-Module. No additional policies are defined.
 
+
+<<<
+
 == Security Objectives 
 
 === Security Objectives for the Operational Environment
@@ -342,6 +354,9 @@ The following rationale provides justification that the security objectives for 
 |A.VS_CORRECT_CONFIGURATION (applies to vNDs only) |The assumption that the VS and VMs are correctly configured is addressed by the corresponding requirement in OE.VM_CONFIGURATION
 |===
 
+
+<<<
+
 == Security Functional Requirements 
 
 The individual SFRs are specified in the sections below. SFRs in this section are mandatory SFRs that any conformant TOE must meet. Additional optional SFRs may also be adopted from those listed in Annex A.
@@ -358,16 +373,16 @@ The conventions used in descriptions of the SFRs are as follows:
 
 * Unaltered SFRs are stated in the form used in [CC2] or their extended component definition (ECD);
 * Refinement made in the PP: the refinement text is indicated with *bold text* and +++<del>+++strikethroughs+++</del>+++;
-* Selection wholly or partially completed in the PP: the selection values (i.e. the selection values adopted in the PP or the remaining selection values available for the ST) are indicated with +++<u>+++underlined text.+++</u>+++
+* Selection wholly or partially completed in the PP: the selection values (i.e. the selection values adopted in the PP or the remaining selection values available for the ST) are indicated with [.underline]#underlined text.#
 +
-e.g. ‘[selection: _disclosure, modification, loss of use_]’ in [CC2] or an ECD might become ‘+++<u>+++disclosure’+++</u>+++ (completion) or ‘[selection: +++<u>+++disclosure+++</u>+++, +++<u>+++modification+++</u>+++]’ (partial completion) in the PP;
+e.g. ‘[selection: _disclosure, modification, loss of use_]’ in [CC2] or an ECD might become ‘[.underline]#disclosure#’ (completion) or ‘[selection: [.underline]#disclosure#, [.underline]#modification#]’ (partial completion) in the PP;
 * Assignment wholly or partially completed in the PP: indicated with _italicized text_;
-* Assignment completed within a selection in the PP: the completed assignment text is indicated with _+++<u>+++italicized and underlined text+++</u>+++_
+* Assignment completed within a selection in the PP: the completed assignment text is indicated with [.underline]#_italicized and underlined text_#
 +
 
 e.g. [selection: _change_default, query, modify,
 delete, [assignment: other operations]_
-]’ in [CC2] or an ECD might become ‘+++<u>+++change_default+++</u>+++, _+++<u>+++select_tag_’+++</u>+++ (completion of both selection and assignment) or ‘[selection: +++<u>+++change_default+++</u>+++, _+++<u>+++select_tag, select_value+++</u>+++_]’ (partial completion of selection, and completion of assignment) in the PP;
+]’ in [CC2] or an ECD might become ‘[.underline]#change_default#, [.underline]#_select_tag_#’ (completion of both selection and assignment) or ‘[selection: [.underline]#change_default#, [.underline]#_select_tag, select_value_#]’ (partial completion of selection, and completion of assignment) in the PP;
 
 * Iteration: indicated by adding a string starting with ‘/’ (e.g. ‘FCS_COP.1/Hash’).
 
@@ -601,11 +616,17 @@ _This management function needs to be supported by the TSF in addition to the on
 | _The ability to configure firewall rules is expected to be restricted to authorized Security Administrators in accordance with the role-based administrative model defined in the PP-Module Base._
 |===
 
+
+<<<
+
 == Security Assurance Requirements
 
 The Security Assurance Requirements are fully inherited from the PP-Module Base. This PP-Module requires the use of evaluation methods/evaluation activities defined in [SD-FW] and [SD-ND].
 
+<<<
+
 [appendix]
+
 == Optional Requirements
 
 As indicated in the introduction to this PP-Module, the baseline requirements (those that must be performed by the TOE) are contained in the body of this PP-Module. Additionally, there are optional requirements specified in this Annex.
@@ -654,12 +675,18 @@ _It is important to note that there is no expectation that any network packets b
 
 _If the ST Author includes additional protocols, they must identify the RFC or equivalent standard that specifies the behavior of the protocol, as is done for FTP above._
 
+<<<
+
 [appendix]
+
 == Selection-Based Requirements
 
 There are no selection-based requirements defined for this PP-Module. This chapter is only kept for consistency with the structure of the PP-Module Base.
 
+<<<
+
 [appendix]
+
 == Extended Component Definitions
 
 This Annex contains the definitions for the extended requirements that are used in the PP-Module, including those used in Annex A.
@@ -761,12 +788,18 @@ Dependencies: FFW_RUL_EXT.1
 
 *FFW_RUL_EXT.2.1* The TSF shall dynamically define rules or establish sessions allowing network traffic to flow for the following network protocols [assignment: _list of supported protocols_].
 
+<<<
+
 [appendix]
+
 == Entropy Documentation and Assessment
 
 No additional entropy documentation or assessment requirements are defined for this PP-Module.
 
+<<<
+
 [appendix]
+
 == Rationales
 
 === SFR Dependencies Analysis
@@ -789,7 +822,10 @@ The dependencies between SFRs implemented by the TOE are addressed as follows.
 |===
 [[tbl-deps-optional]]_Table 5: SFR Dependencies Rationale for Optional SFRs_
 
+<<<
+
 [appendix]
+
 == Glossary 
 
 [width="100%",cols="40%,60%",options="header"]
@@ -817,7 +853,10 @@ The dependencies between SFRs implemented by the TOE are addressed as follows.
 
 See [CC1] for other Common Criteria abbreviations and terminology.
 
+<<<
+
 [appendix]
+
 == Acronyms 
 
 [width="100%",cols="15%,85%",options="header",]
